@@ -1,0 +1,131 @@
+%Dokumentklasse
+\documentclass[a4paper,12pt]{scrreprt}
+\usepackage[left= 2.5cm,right = 2cm, bottom = 4 cm]{geometry}
+%\usepackage[onehalfspacing]{setspace}
+% ============= Packages =============
+
+% Dokumentinformationen
+\usepackage[
+pdftitle={Predicting Stock values using Gaussian Machine Learning},
+pdfsubject={},
+pdfauthor={Jesse Jones},
+pdfkeywords={Master Thesis, Thesis, Master, Physics, Sciences, Machine Learning, Learning, Gaussian, Statistics, Stock, Stock Market, Stockprices, Prediction},	
+%Links nicht einrahmen
+hidelinks
+]{hyperref}
+
+
+% Standard Packages
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\graphicspath{{img/}}
+\usepackage{fancyhdr}
+\usepackage{lmodern}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{bbold}
+\usepackage{listings}
+\usepackage{tikz,pgfplots}
+\usepackage{epsfig}
+\usepackage{subcaption}
+\usepackage[section]{placeins}
+
+% zusätzliche Schriftzeichen der American Mathematical Society
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{amssymb}
+
+%nicht einrücken nach Absatz
+\setlength{\parindent}{0pt}
+
+%Code Beispiele mit Style Datei
+\lstdefinestyle{Python}{
+	language = Python,
+	numbers = left,
+	stepnumber = 1,
+	numbersep = 10pt,
+	tabsize = 4,
+	showspaces = false,
+	showstringspaces = false,
+}
+
+\lstdefinestyle{Stan}{
+	numbers = left,
+	stepnumber = 1,
+	numbersep = 10pt,
+	tabsize = 4,
+	showspaces = false,
+	showstringspaces = false,
+}
+
+
+% ============= Kopf- und Fußzeile =============
+\pagestyle{fancy}
+%
+\lhead{}
+\chead{}
+\rhead{\slshape \leftmark}
+%%
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+%%
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% ============= Package Einstellungen & Sonstiges ============= 
+%Besondere Trennungen
+\hyphenation{De-zi-mal-tren-nung}
+
+%Tensor Product
+%\newcommand{\tens}[1]{%
+%	\mathbin{\mathop{\otimes}\displaylimits_{#1}}%
+	
+	
+% ============= Dokumentbeginn =============
+
+\begin{document}
+	%Seiten ohne Kopf- und Fußzeile sowie Seitenzahl
+	\pagestyle{empty}
+	
+	\include{01_title}
+	
+	\include{02_acknowledgements}
+	
+	\include{03_abstract}
+	
+	% Beendet eine Seite und erzwingt auf den nachfolgenden Seiten die Ausgabe aller Gleitobjekte (z.B. Abbildungen), die bislang definiert, aber noch nicht ausgegeben wurden. Dieser Befehl fügt, falls nötig, eine leere Seite ein, sodaß die nächste Seite nach den Gleitobjekten eine ungerade Seitennummer hat. 
+	\cleardoubleoddpage
+	
+	% pagestyle für gesamtes Dokument aktivieren
+	\pagestyle{fancy}
+	
+	%Inhaltsverzeichnis
+	\tableofcontents
+	
+	%Verzeichnis aller Bilder
+	\listoffigures
+	
+	%Hauptteil des Textes
+	\include{04_introduction}
+	
+	\include{05_basics}
+	
+	\include{06_methods}
+	
+	\include{07_results}
+	\label{sec:results}
+	
+	\include{08_discussion}
+	
+	\include{09_appendices}
+	
+	
+	%Literaturverzeichnis
+	\bibliographystyle{unsrtdin}
+	\bibliography{Literatur}
+	
+\end{document}

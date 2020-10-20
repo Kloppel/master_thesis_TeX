@@ -1,0 +1,62 @@
+When trying to calculate the optimal portfolio, to maximize returns while still minimizing risk, or in explaining effects of risk diversification, the need for a portfolio theory arises. This theory should explain how inverstors make sensible decisions in the optimisation problem of risk versus return, as well as explain how diversification in experiment achieves such a feature. While previous studies \cite{Markowitz_1952} of the models have shown that lesser correlations result in risk reduction, the effect can be used efficiently to more accurately predict stock returns in the future. The model proposed by Markowitz can achieve risk-minimisation, while still providing return maximisation. The goal of the model is to create action instructions enabling investors to build their optimal portfolio based on the combination of investment opportunities. To achieve this, the theory is based upon a set of assumptions.
+\begin{itemize}%Markowitz Assumptions
+	\item The investor is an agent only interested in amassing its own wealth. It is only interested in basing decisions on known financial information. 
+	\item The investor agent acts only rational and usage-maximizing, weighing only profits against risks.
+	\item Risks should always be averted, so high-risk actions should only be taken if the expected return grows disporportionately higher. 
+	\item The capital market is complete. 
+	\item Systematic risk affects all assets, while specific risk only affects the respective specific assets. 
+\end{itemize}
+If the above assumptions hold, an investor will always choose a portfolio over another, if the expected return $\mu$ is greater or equal, with a smaller variance $\sigma$, or if the return $\mu$ is greater while the variance $\sigma$ is equal. A complete capital market is a market with negligible transaction costs and perfect information, and the existence of a price for every asset in every possible state of the world \cite{Buckle_2018}. Due to the inequalities in these conditions, only unique portfolios will appear in the theory. A solution to the equations is called an efficient portfolio. Efficient portfolios avert unreasonably high overall risks while retaining a relatively high expected return.  \newline
+When obtaining an asset with money $x_0$ and selling it at a later date for money $x_1$, the ratio between the two can be defined as the absolute return $R$. 
+\begin{equation}%Return simple definition
+	R = \frac{x_1}{x_0}
+\label{eq: Return simple definition}
+\end{equation}
+From this, we can easily derive the rate of return, or relative return, which will in later chapters will be regarded as \textit{return} $r$. 
+\begin{equation}%Return Rate Definition
+	r = R-1 = \frac{x_1 - x_0}{x_0}
+\label{eq:Return_Rate_Definition}
+\end{equation} 
+These definitions hold for buy-sell actions, as well as short selling, where the investor first sells assets from the broker and then rebuys them at a later date, resulting in a sell-buy action. In the case of short selling, double negative signs in the fractions arise, but cancel out. Risks are, for now, expected to always be real positive values, never exactly zero. This leads to a normalized system of investments through weights $w_i$ describing how much of the total monetary aggregate is invested into asset or portfolio $i$
+\begin{equation}%Normalization of Sum of Investments
+	\sum_{i=1}^{n} w_i x_0 = x_0.
+\label{eq: Normalization of Sum of Investments}
+\end{equation}
+The rate of return of the total investment is
+\begin{equation}%total rate of return
+	r = R-1 = \sum_{i=1}^{n} R_i w_i - \sum_{i=1}^{n} w_i = \sum_{i=1}^{n} r_i w_i.
+\label{eq: total rate of return}
+\end{equation}
+The Markowitz Mean-Variance Portfolio Theory then models the rate of returns on assets as random variables. A global optimisaition is then applied to find the best weights for each part of the portfolio. The volatility of an asset is surrogated through the proportional variance. We find the Markowitz problem to be the optimisation of
+\begin{subequations}
+	\label{eq:Markowitz Optimisation Problem}
+	\begin{align}
+	\text{\textbf{min}} \Bigg( 0.5 \bm{w}^{\top} \Sigma \bm{w} \Bigg)         \label{eq:Optimisation} \\
+	\text{subject to }\bm{m}^{\top} \bm{w} \geq \mu_b \text{ and }\bm{e}^{\top}\bm{w}=1         \label{eq:Conditions}
+	\end{align}
+\end{subequations}
+Where $w$ is the vector of weights, $\Sigma$ the covariance matrix of the random random vector $z$ containing the returns, $m^{\top}w$ the mean of the random variable, $w^{\top} \Sigma w $ is the variance and $\mu_b = \mathbb{E}[r_b]$ the acceptable baseline expected return. Also, $e$ is the unit vector of the arbitrary dimension suiting the problem and $n$, the number of possible assets. To solve this nonlinear problem, Karush-Kuhn-Tucker (KKT) conditions \cite{Kuhn_Tucker_2014} can be formulated, which allow the analytic and algorithmic solution of the problem. At first, showing that the problem is feasible guarantees the existence of a finite optimal value, as well as the existence of a solution to find the optimal value. If the acceptable baseline expected return is below the mean, $\mu_b > \bm{m}^{\top}\bm{w}$, the obtained solution is a least variance solution. The mean return associated with the least-variance solution $\mu_{lv}$ is
+\begin{equation}%mean return least-variance solution
+	\mu_{lv} = \frac{\bm{m}^{\top} \Sigma^{-1}\bm{e}}{\bm{e}^{\top} \Sigma^{-1}\bm{e}}
+\label{eq: mean return least-variance solution}
+\end{equation}
+The case $\mu_b = \bm{m}^{\top}\bm{w}$ is also possible, where we can identify that the optimal portfolio usually is two-fold. 
+\begin{equation}%optimal distribution of weights
+	w = (1-\alpha) \frac{\Sigma^{-1}\bm{e}}{\bm{e}^{\top}\Sigma^{-1}\bm{e}} + \alpha \frac{\Sigma^{-1}\bm{m}}{\bm{e}^{\top}\Sigma^{-1}\bm{m}} = (1-\alpha)w_{lv} + \alpha w_{mk}
+\label{eq: optimal distribution of weights}
+\end{equation}
+Any solution to the Markowitz problem can be presented as a linear combination of these two sets of weights: the risk-free least-variance solution, and the market portfolio, which incorporates the rest of the knowledge about the market. The previous statement is also known as the \textit{Two Fund Theorem}. We can obtain the solution space by finding all possible curves parametrised by 
+\begin{subequations}%Solution space curves
+	\label{eq:Solution space curves}
+	\begin{align}
+	\Big( \sqrt{\bm{w}_i^{\top}}, r_i \Big) = \Big( \sqrt{var(r_i)}, \mathbb{E}(r_i) \Big)        \label{eq:Solution space curve} \\
+	\text{where } r_i = \bm{w}_i^{\top}r, \text{ as } i \text{, the number of assets, varies from } 0 \text{ to } +\infty         \label{eq:Solution space curve conditions}
+	\end{align}
+\end{subequations}
+If a risk-free asset is introduced now, as is a good approximation for very low risk securities, e.g. treasury bonds, some properties of the described system change. First, the \textit{One Fund Theorem} is introduced. It states, that for the case of available risk-free assets, the least variance portfolio is always comprised of only those risk-free assets. Also, every efficient portfolio can be created using a combination of these risk-free portfolios and another Fund $F$ with risk $>0$. This leads directly towards the Capital Asset Pricing Model (CAPM), which provides and solves for optimal portfolios, assuming risk-free assets exist. \newline 
+This still leaves open the question of how to optimally calculate a covariance matrix, so that it is the closest approximation of the true covariance matrix. A simple theory of construction is given by the sample covariance matrix, 
+\begin{equation}
+	K = \frac{1}{D} (\bm{r}-\bm{\hat{\mu}})(\bm{r}-\bm{\hat{\mu}})^{\top}.
+	\label{eq:sample_cov}
+\end{equation}
+Where $\bm{\hat{\mu}}$ is again the mean of the asset samples respectively. If the number of days of observation $D$ is large enough, this estimation is called the maximum likelihood estimator. It provides an unbiased estimation, but in practice, especially if the ratio $N/D$ is not small, the matrices often become unstable or singular. Other methods include the Ledoit-Wolf estimation, where shrinkage is used to estimate the covariance matrix \cite{Ledoit_2004}, or Gaussian Processes, which will be discussed in sections \ref{sec:GPLVM} and \ref{sec:gplvm_finance}. 

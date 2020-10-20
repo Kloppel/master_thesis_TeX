@@ -1,0 +1,66 @@
+This is BibTeX, Version 0.99d (MiKTeX 2.9.7400 64-bit)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: 00_Vorlage Abschlussarbeit.aux
+A level-1 auxiliary file: 01_title.aux
+A level-1 auxiliary file: 02_acknowledgements.aux
+A level-1 auxiliary file: 03_abstract.aux
+A level-1 auxiliary file: 04_introduction.aux
+A level-1 auxiliary file: 05_basics.aux
+A level-1 auxiliary file: 06_methods.aux
+A level-1 auxiliary file: 07_results.aux
+A level-1 auxiliary file: 08_discussion.aux
+A level-1 auxiliary file: 09_appendices.aux
+The style file: unsrtdin.bst
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'wiz_functions' (item size: 4) to 6000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Database file #1: Literatur.bib
+Warning--entry type for "pyflux" isn't style-file defined
+--line 419 of file Literatur.bib
+Warning--entry type for "yahoo_finance" isn't style-file defined
+--line 571 of file Literatur.bib
+Warning--empty address in stan_manual
+You've used 47 entries,
+            4011 wiz_defined-function locations,
+            1140 strings with 13962 characters,
+and the built_in function-call counts, 23127 in all, are:
+= -- 2280
+> -- 317
+< -- 896
++ -- 907
+- -- 125
+* -- 1642
+:= -- 3381
+add.period$ -- 75
+call.type$ -- 47
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 48
+duplicate$ -- 602
+empty$ -- 2080
+format.name$ -- 252
+if$ -- 4829
+int.to.chr$ -- 0
+int.to.str$ -- 48
+missing$ -- 213
+newline$ -- 297
+num.names$ -- 47
+pop$ -- 205
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 1157
+stack$ -- 0
+substring$ -- 2473
+swap$ -- 199
+text.length$ -- 120
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 4
+warning$ -- 1
+while$ -- 165
+width$ -- 49
+write$ -- 667
+(There were 3 warnings)

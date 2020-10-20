@@ -1,0 +1,22 @@
+When analyzing Y-$\hat{Y}$-plots, a single higher deviation from the optimal line is possibly attributing for a high percentage of how the slope and intercept value turns out. But since way more points are located around the suspected optimal line, this value should reflect the accuracy of reconstruction better. Therefore Huber regression was used to fit the values of slope and intercept onto the data-prediction pairs. Huber regression is also a linear regression, but outside of an interval of $beta$ times the standard deviation of data, the data points contribute less to the least squares optimization of the linear fit, by contributing linearly and not quadratically. To see that this enhances the predictions, we show an example of some stocks data-prediction plots, Figure \ref{fig:huber_stock_plots}, with the optimized fits of Huber regression (hr, green lines), linear regression (lr, red lines), and the optimal line (y=x, blue lines). 
+\begin{figure}[h!]%fig:huber_stock_plots
+	\label{fig:huber_stock_plots}
+	\centering
+	\includegraphics[width=4in]{img/AA/comparison_huber_linear.png}
+	\caption[Comparison Huber Regression on pair plots]
+	{Several stocks, that exhibit strong cases of outliers in data-prediction pairs are shown, all with linear regression fits using least squares optimization (red), huber regression using least squares inside the interval of $alpha=1.35$ standard deviations around the fit and linear contribution of outliers (green) and the optimal line with slope 1 and intercept 0 (blue). Using the convention of this thesis, the data are shown on the x-axis, and predictions on the y-axis. }
+\end{figure}
+Huber regression shows more robustness towards outliers. This is also reflected when looking at the population of all days of a single stock, fitted once with linear regression (left, Figure \ref{fig:linear_reg_population}) and once with Huber regression (right, Figure \ref{fig:huber_reg_population}). 
+\begin{figure}[h!]%fig:linear_reg_population, fig:huber_reg_population
+	\centering
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=\textwidth]{img/AA/lin_reg.png}
+		\caption[Linear regression populations]{The populations of slope (top panel) and intercept (bottom panel) values as densities of a dataset of a single stock using linear least squares regression.}
+		\label{fig:linear_reg_population}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[width=\textwidth]{img/AA/hub_reg.png}
+		\caption[Huber regression populations]{The populations of slope (top panel) and intercept (bottom panel) values as densities of a dataset of a single stock using Huber regression.}
+		\label{fig:huber_reg_population}
+	\end{subfigure}
+\end{figure}

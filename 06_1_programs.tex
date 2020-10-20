@@ -1,0 +1,198 @@
+\subsection{Programm Sequence}
+\begin{figure}%fig:program_sequence
+	\label{fig:program_sequence}
+	\centering
+	\includegraphics[width=60mm]{img/06_1/ThesisOverview.png}
+	\caption[Overview of the program sequence.]
+	{Program Sequence overview according to DIN 66001 \cite{DIN66001}.}
+\end{figure}
+As shown in the program sequence overview \ref{fig:program_sequence}, the process executed starts with a second programm, decoupled from the acutal calculations, downloading stock market data from yahoo finance \cite{yahoo_finance} with previously specified tickers from the S\&P500 index over an also specified time period, where the full time period is 2010/01/01-2013/01/01. In the calculation sequence a dataset is downloaded, and lists of values for latent dimensions (Qs), kernel functions (kernels), and different models are specified. With these, the models written in stan are compiled by the stan model compile function, and saved as a pickled model. This model is then executed for all combinations of Qs and kernels using the variational bayes algorithm. Variational Bayes outputs diagnostic information of the model, and samples for all parameters specified in either the parameter block or the generated quantities block of the stan model. These are both saved as files for later checking of the models diagnostic, through both the diagnostic information, most notably ELBO values from the variational inference, and the samples, from which e.g. $R^2$ values can be calculated. With this, different sanity checks are applied, like plotting the true measured values against the predictions calculated from the models learned structure, checking the values from different sampled variables agains the expectations. All of these will be discussed in detail in the results section \ref{sec:results}. 
+
+\subsection{The stan language}
+The stan language was referenced a few times before, in this section a little more light will be shed on how to apply it. To recap, stan \cite{stan_overview} is a program that compiles an efficient \textit{c++} program from a textfile in which in the stan language a statistical model is specified. This text file is comprised of up to 9 blocks, in which different parts of the model are specified and whose compiled program parts are executed at different times during the execution of the compiled program. This will be henceforth referenced to as "evaluation of a block". At first, the data block is evaluated. It specifies the variables that are fixed, and are handed to the compiled program for execution. Typical entries are a number of which kernel function to use, the data matrix $Y$, as well as some initially fixed variables like a jitter or the number of dimensions of the latent space $Q$. This block can be preceded by a functions block, which is not needed for execution, but can be convenient when the model has some parts of code that need to be executed several times. After the data block, a block called transformed data can be introduced, in which constants and transforms of the content of the data block can be specified. This can be used to e.g. create null-vectors, which in a lot of models are used as starting parameters of a mean. Then follows the parameters block, which is filled with variables that are to be inferred, reckoning sampled or optimized, during the execution of the program. mPosterior distributions of variables specified as parameters of the model in the parameters block are approximated during variational inference. The parameters can be transformed in the transformed parameters block. No statements are allowed in the previous blocks, except for transformed data and transformed parameters block. In the model block, the log of the unnormalized posterior density is specified, and the sampling statements of parameters are selected. Finally, the generated quantities block allows for the creation of derived variables, containing the variables from the parameters block. \newline \newline
+Formally, all blocks are optional, but a typical sensible program will have at least a data block, parameters, and a model block. This ordering of the blocks is necessary, and disobeying it will break the program. In the following listing, a simple Gaussian process is depicted \cite{stan_manual}.
+\lstset{basicstyle=\tiny, style=Stan}
+\begin{lstlisting}
+	data {
+		int<lower=1> N;
+		real x[N];
+	}
+	transformed data {
+		matrix[N, N] K = cov_exp_quad(x, 1.0, 1.0);
+		vector[N] mu = rep_vector(0, N);
+		for (n in 1:N)
+		K[n, n] = K[n, n] + 0.1;
+	}
+	parameters {
+		vector[N] y;
+	}
+	model {
+		y ~ multi_normal(mu, K);
+	}
+\end{lstlisting}
+Variables declared in a program block will have scope over all blocks, in a way be global, and functions may be used in all appropriate blocks. Exceptions to this rule are, that variables from the model block are local, and variables declared in a later block are not yet known to an earlier block. Functions that generate random numbers are limited to the transformed data and generated quantities block, and functions that modify log probability may only be used in the transfomred parameters and model block. This stan language, with a syntax close to that of other high-level programming languages like \textit{python} or \textit{c++}, is comparably easy to write and learn, while compiling very efficient programs. Writing down the model in mathematical terms almost directly translates to the stan model, which makes application of stan very practical, especially for users without intensive training in computer science \cite{stan_manual}. A compiled stan model can be used different ways. One can optimize the defined log posterior density, approximate their posterior using variational inference or sample from the posterior using Hamiltonian Monte Carlo. In the following figure, a more complex model is shown, which is referred to as GPLVM throughout this work.
+\lstset{basicstyle=\tiny, style=Stan}
+\begin{lstlisting}
+functions {
+	matrix cov_linear(vector[] X1, vector[] X2, real sigma){
+		int N = size(X1);
+		int M = size(X2);
+		int Q = num_elements(X1[1]);
+		matrix[N,M] K;
+		{
+			matrix[N,Q] x1;
+			matrix[M,Q] x2;
+			for (n in 1:N)
+				x1[n,] = X1[n]';
+			for (m in 1:M)
+				x2[m,] = X2[m]';
+			K = x1*x2';
+		}
+		return square(sigma)*K;
+	}
+	
+	matrix cov_matern32(vector[] X1, vector[] X2, real sigma, real l, real jitter){
+		int N = size(X1);
+		int M = size(X2);
+		matrix[N,M] K;
+		real dist;
+		for (n in 1:N)
+			for (m in 1:M){
+				dist = sqrt(squared_distance(X1[n], X2[m]) + jitter);
+				K[n,m] = square(sigma)*(1+sqrt(3)*dist/l)*exp(-sqrt(3)*dist/l);
+		}
+		return K;
+	}
+		
+	matrix cov_matern52(vector[] X1, vector[] X2, real sigma, real l, real jitter){
+		int N = size(X1);
+		int M = size(X2);
+		matrix[N,M] K;
+		real dist;
+		for (n in 1:N)
+			for (m in 1:N){
+				dist = sqrt(squared_distance(X1[n], X2[m]) + jitter);
+				K[n,m] = square(sigma)*(1+sqrt(5)*dist/l+5*square(dist)/(3*square(l)))*exp(-sqrt(5)*dist/l);
+		}
+		return K;
+	}
+	
+	matrix cov_exp_l2(vector[] X1, vector[] X2, real sigma, real l, real jitter){
+		int N = size(X1);
+		int M = size(X2);
+		matrix[N,M] K;
+		real dist;
+		for (n in 1:N)
+			for (m in 1:M){
+				dist = sqrt(squared_distance(X1[n], X2[m]) + jitter);
+				K[n,m] = square(sigma) * exp(-0.5/l * dist);
+		}
+		return K;
+	}
+	
+	matrix cov_exp(vector[] X1, vector[] X2, real sigma, real l, real jitter){
+		int N = size(X1);
+		int M = size(X2);
+		matrix[N,M] K;
+		real dist;
+		int Q = rows(X1[1]);
+		for (n in 1:N)
+			for (m in 1:M){
+				dist = 0;  
+				for (i in 1:Q)
+					dist = dist + fabs(X1[n,i] - X2[m,i]);
+					K[n,m] = square(sigma) * exp(-0.5/l * dist);
+		}
+		return K;
+	}
+	
+	matrix kernel_f(vector[] X1, vector[] X2, real sigma, real l, 
+	real a, int kernel, vector diag_stds, real jitter){
+		int N = size(X1);
+		int M = size(X2);
+		matrix[N,M] K;
+		if (kernel==1)
+		K = cov_linear(X1, X2, a);
+		else if (kernel==2){
+			K = cov_exp_quad(X1, X2, sigma, l);
+			for (n in 1:N)
+			K[n,n] = K[n,n] + jitter;
+			K = quad_form_diag(K, diag_stds);
+		}
+		else if (kernel==3){
+			K = cov_exp(X1, X2, sigma, l, jitter);
+			K = quad_form_diag(K, diag_stds);
+		}
+		else if (kernel==4){
+			K = cov_matern32(X1, X2, sigma, l, jitter);
+			K = quad_form_diag(K, diag_stds);
+		}
+		else if (kernel==5){
+			K = cov_matern52(X1, X2, sigma, l, jitter);
+			K = quad_form_diag(K, diag_stds);
+		}
+		return K;
+	}
+}
+data {
+	int<lower=1> N;
+	int<lower=1> D;
+	int<lower=1> Q;
+	matrix[N,D] Y;
+	int<lower=1,upper=5> kernel;
+	real<lower=0> jitter;
+}
+transformed data {
+	vector[N] mu = rep_vector(0, N);
+}
+parameters {
+	vector[Q] X[N];                       
+	real<lower=0> kernel_lengthscale;     
+	vector<lower=0>[N] diag_stds;        
+	vector<lower=0>[N] noise_std;          	
+	real<lower=0> alpha;                  
+}
+transformed parameters {
+	matrix[N,N] L;
+	real R2 = 0;
+	{
+		matrix[N,N] K = kernel_f(X, X, 1., kernel_lengthscale, 
+		alpha, kernel, diag_stds, jitter);
+		
+		for (n in 1:N)
+		K[n,n] = K[n,n] + pow(noise_std[n], 2) + jitter;
+		L = cholesky_decompose(K);
+		
+		R2 = sum(1 - square(noise_std) ./diagonal(K) )/N;
+	}
+}
+model {
+	for (n in 1:N)
+	X[n] ~ normal(0, 1);
+	
+	diag_stds ~ normal(0, .5);
+	noise_std ~ normal(0, .5);
+	kernel_lengthscale ~ inv_gamma(3.0,1.0);
+	alpha ~ inv_gamma(3.0, 1.0);             
+	
+	for (d in 1:D) 
+	col(Y,d) ~ multi_normal_cholesky(mu, L);
+}
+generated quantities {
+	matrix[N,N] K = kernel_f(X, X, 1., kernel_lengthscale, 
+	alpha, kernel, diag_stds, jitter);
+}
+\end{lstlisting}
+
+\subsection{Conditioning}
+Stan´s algorithms approximate the density, or penalized maximum likelihood, step-, and gradient based. This leads to the statistical efficiency of the stan programs relying on posterior curvature, which is not captured by these algorithms. To solve this problem, one has first to look at the Hessian, which is defined in a statistical context by
+\begin{equation}%Hessian Conditioning
+	H(\theta) = \nabla \nabla log (p(\theta | y))
+\label{eq: Conditioning with Hessian principle}
+\end{equation}
+where again, $\theta$ is the parameter vector, and y is the data. Here, the Hessian is a second order approximation to curvature, which can be expressed in matrix form as
+\begin{equation}%Hessian Conditioning Matrix Form
+	H_{i,j}(\theta) = \frac{\partial^2 log (p(\theta | y))}{\partial \theta_i \partial \theta_j}.
+\label{eq: Conditioning with Hessian Matrix}
+\end{equation}
+Using this, we find that comparing the largest and smallest eigenvalue of $H$ as a ratio gives a good estimation of how much of a problem the aforementioned curvature presents. That ratio represents the largest and smallest curvature values, where typically the step size of a gradient based algorithm is bounded by the highest curvature value. Optimizing this highest curvature leads to better conditioning of the model, which in turn enhances computation cost and time. In all models, except the most simple ones (e.g. multivariate normal distributions), the Hessian will vary as the set of parameters $\theta$ varies. And for the assumption of fixed adaptation parameters, which is true in all algorithms except Riemannian Hamiltonian Monte Carlo, which in turn is not implemented in stan and computationally very expensive, a high variance of curvature will lead to worse adaptations covering the entire density sufficiently. Variable transformations are often proposed with the aim of improving the conditioning of the Hessian. This usually entails, or is transferable with making the Hessian more consistent across relevant parts of the density. For variational inference the iterative algorithm then finds a single point as curvature of the path from the initial values of the parameters to the solution. Taking this into account, another way of improving statistical efficiency is reparameterising the model in such a fashion, that the same results may be calculated, using a better conditioned density or maximum likelihood. Diving into this would entail redefining bayesian posteriors as to what they technically are, probability measures, so this is left for further work. 

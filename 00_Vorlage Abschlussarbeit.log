@@ -1,0 +1,2640 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7400 64-bit) (preloaded format=pdflatex 2020.4.22)  20 OCT 2020 23:27
+entering extended mode
+**"./00_Vorlage Abschlussarbeit.tex"
+("00_Vorlage Abschlussarbeit.tex"
+LaTeX2e <2020-02-02> patch level 5
+L3 programming layer <2020-04-06>
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/koma-script\scrrep
+rt.cls"
+Document Class: scrreprt 2020/01/24 v3.29 KOMA-Script document class (report)
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/koma-script\scrkba
+se.sty"
+Package: scrkbase 2020/01/24 v3.29 KOMA-Script package (KOMA-Script-dependent b
+asics and keyval usage)
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/koma-script\scrbas
+e.sty"
+Package: scrbase 2020/01/24 v3.29 KOMA-Script package (KOMA-Script-independent 
+basics and keyval usage)
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\keyval.st
+y"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/koma-script\scrlfi
+le.sty"
+Package: scrlfile 2020/01/24 v3.29 KOMA-Script package (loading files)
+)))
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/koma-script\tocbas
+ic.sty"
+Package: tocbasic 2020/01/24 v3.29 KOMA-Script package (handling toc-files)
+\scr@dte@tocline@numberwidth=\skip47
+\scr@dte@tocline@numbox=\box45
+)
+Package tocbasic Info: omitting babel extension for `toc'
+(tocbasic)             because of feature `nobabel' available
+(tocbasic)             for `toc' on input line 137.
+Package scrreprt Info: You've used standard option `12pt'.
+(scrreprt)             This is correct!
+(scrreprt)             Internally I'm using `fontsize=12pt'.
+(scrreprt)             If you'd like to set the option with \KOMAoptions,
+(scrreprt)             you'd have to use `fontsize=12pt' there
+(scrreprt)             instead of `12pt', too.
+Class scrreprt Info: File `scrsize12pt.clo' used to setup font sizes on input l
+ine 2421.
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/koma-script\scrsiz
+e12pt.clo"
+File: scrsize12pt.clo 2020/01/24 v3.29 KOMA-Script font size class option (12pt
+)
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/koma-script\typear
+ea.sty"
+Package: typearea 2020/01/24 v3.29 KOMA-Script package (type area)
+\ta@bcor=\skip48
+\ta@div=\count167
+Package typearea Info: You've used standard option `a4paper'.
+(typearea)             This is correct!
+(typearea)             Internally I'm using `paper=a4'.
+(typearea)             If you'd like to set the option with \KOMAoptions,
+(typearea)             you'd have to use `paper=a4' there
+(typearea)             instead of `a4paper', too.
+\ta@hblk=\skip49
+\ta@vblk=\skip50
+\ta@temp=\skip51
+\footheight=\skip52
+Package typearea Info: These are the values describing the layout:
+(typearea)             DIV  = 12
+(typearea)             BCOR = 0.0pt
+(typearea)             \paperwidth      = 597.50793pt
+(typearea)              \textwidth      = 448.13095pt
+(typearea)              DIV departure   = -6%
+(typearea)              \evensidemargin = 2.4185pt
+(typearea)              \oddsidemargin  = 2.4185pt
+(typearea)             \paperheight     = 845.04694pt
+(typearea)              \textheight     = 635.5pt
+(typearea)              \topmargin      = -41.72441pt
+(typearea)              \headheight     = 18.125pt
+(typearea)              \headsep        = 21.75pt
+(typearea)              \topskip        = 12.0pt
+(typearea)              \footskip       = 50.75pt
+(typearea)              \baselineskip   = 14.5pt
+(typearea)              on input line 1719.
+)
+\c@part=\count168
+\c@chapter=\count169
+\c@section=\count170
+\c@subsection=\count171
+\c@subsubsection=\count172
+\c@paragraph=\count173
+\c@subparagraph=\count174
+\scr@dte@chapter@maxnumwidth=\skip53
+Class scrreprt Info: using compatibility default `afterindent=bysign'
+(scrreprt)           for `\chapter on input line 5547.
+\scr@dte@section@maxnumwidth=\skip54
+Class scrreprt Info: using compatibility default `runin=bysign'
+(scrreprt)           for `\section on input line 5557.
+Class scrreprt Info: using compatibility default `afterindent=bysign'
+(scrreprt)           for `\section on input line 5557.
+\scr@dte@part@maxnumwidth=\skip55
+Class scrreprt Info: using compatibility default `afterindent=true'
+(scrreprt)           for `\part on input line 5566.
+\scr@dte@subsection@maxnumwidth=\skip56
+Class scrreprt Info: using compatibility default `runin=bysign'
+(scrreprt)           for `\subsection on input line 5576.
+Class scrreprt Info: using compatibility default `afterindent=bysign'
+(scrreprt)           for `\subsection on input line 5576.
+\scr@dte@subsubsection@maxnumwidth=\skip57
+Class scrreprt Info: using compatibility default `runin=bysign'
+(scrreprt)           for `\subsubsection on input line 5586.
+Class scrreprt Info: using compatibility default `afterindent=bysign'
+(scrreprt)           for `\subsubsection on input line 5586.
+\scr@dte@paragraph@maxnumwidth=\skip58
+Class scrreprt Info: using compatibility default `runin=bysign'
+(scrreprt)           for `\paragraph on input line 5596.
+Class scrreprt Info: using compatibility default `afterindent=bysign'
+(scrreprt)           for `\paragraph on input line 5596.
+\scr@dte@subparagraph@maxnumwidth=\skip59
+Class scrreprt Info: using compatibility default `runin=bysign'
+(scrreprt)           for `\subparagraph on input line 5606.
+Class scrreprt Info: using compatibility default `afterindent=bysign'
+(scrreprt)           for `\subparagraph on input line 5606.
+\abovecaptionskip=\skip60
+\belowcaptionskip=\skip61
+\c@pti@nb@sid@b@x=\box46
+Package tocbasic Info: omitting babel extension for `lof'
+(tocbasic)             because of feature `nobabel' available
+(tocbasic)             for `lof' on input line 6842.
+\scr@dte@figure@maxnumwidth=\skip62
+\c@figure=\count175
+Package tocbasic Info: omitting babel extension for `lot'
+(tocbasic)             because of feature `nobabel' available
+(tocbasic)             for `lot' on input line 6859.
+\scr@dte@table@maxnumwidth=\skip63
+\c@table=\count176
+Class scrreprt Info: Redefining `\numberline' on input line 7028.
+\bibindent=\dimen134
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\geometry.
+sty"
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\ifvtex.sty
+"
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+ ("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\iftex.sty
+"
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+))
+\Gm@cnth=\count177
+\Gm@cntv=\count178
+\c@Gm@tempcnt=\count179
+\Gm@bindingoffset=\dimen135
+\Gm@wd@mp=\dimen136
+\Gm@odd@mp=\dimen137
+\Gm@even@mp=\dimen138
+\Gm@layoutwidth=\dimen139
+\Gm@layoutheight=\dimen140
+\Gm@layouthoffset=\dimen141
+\Gm@layoutvoffset=\dimen142
+\Gm@dimlist=\toks16
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\geometry.
+cfg"))
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\hyperref.
+sty"
+Package: hyperref 2020/01/14 v7.00d Hypertext links for LaTeX
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/ltxcmds\ltxcmds.
+sty"
+Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pdftexcmds\pdftexc
+mds.sty"
+Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/infwarerr\infwar
+err.sty"
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/kvsetkeys\kvsetk
+eys.sty"
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/kvdefinekeys\kvd
+efinekeys.sty"
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pdfescape\pdfesc
+ape.sty"
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hycolor\hycolor.st
+y"
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/letltxmacro\letltx
+macro.sty"
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/auxhook\auxhook.st
+y"
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/kvoptions\kvoption
+s.sty"
+Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
+)
+\@linkdim=\dimen143
+\Hy@linkcounter=\count180
+\Hy@pagecounter=\count181
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\pd1enc.de
+f"
+File: pd1enc.def 2020/01/14 v7.00d Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/intcalc\intcalc.
+sty"
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/etexcmds\etexcmd
+s.sty"
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count182
+Package hyperref Info: Hyper figures OFF on input line 4547.
+Package hyperref Info: Link nesting OFF on input line 4552.
+Package hyperref Info: Hyper index ON on input line 4555.
+Package hyperref Info: Plain pages OFF on input line 4562.
+Package hyperref Info: Backreferencing OFF on input line 4567.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4800.
+\c@Hy@tempcnt=\count183
+ ("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/url\url.sty"
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5159.
+\XeTeXLinkMargin=\dimen144
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/bitset\bitset.st
+y"
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/bigintcalc\bigin
+tcalc.sty"
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count184
+\Field@Width=\dimen145
+\Fld@charsize=\dimen146
+Package hyperref Info: Hyper figures OFF on input line 6430.
+Package hyperref Info: Link nesting OFF on input line 6435.
+Package hyperref Info: Hyper index ON on input line 6438.
+Package hyperref Info: backreferencing OFF on input line 6445.
+Package hyperref Info: Link coloring OFF on input line 6450.
+Package hyperref Info: Link coloring with OCG OFF on input line 6455.
+Package hyperref Info: PDF/A mode OFF on input line 6460.
+LaTeX Info: Redefining \ref on input line 6500.
+LaTeX Info: Redefining \pageref on input line 6504.
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/atbegshi\atbegsh
+i.sty"
+Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
+)
+\Hy@abspage=\count185
+\c@Item=\count186
+\c@Hfootnote=\count187
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\hpdftex.d
+ef"
+File: hpdftex.def 2020/01/14 v7.00d Hyperref driver for pdfTeX
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/atveryend\atveryen
+d.sty"
+Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+)
+\Fld@listcount=\count188
+\c@bookmark@seq@number=\count189
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/rerunfilecheck\rer
+unfilecheck.sty"
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/uniquecounter\un
+iquecounter.sty"
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+86.
+)
+\Hy@SectionHShift=\skip64
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\inputenc.sty"
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks17
+\inpenc@posthook=\toks18
+) ("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\babel.st
+y"
+Package: babel 2020/03/22 3.42 The Babel package
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\switch.def
+"
+File: switch.def 2020/03/22 3.42 Babel switching mechanism
+)
+*************************************
+* Local config file bblopts.cfg used
+*
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/arabi\bblopts.cfg"
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/babel-english\engl
+ish.ldf"
+Language: english 2017/06/06 v3.3r English support from the babel system
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\babel.def"
+File: babel.def 2020/03/22 3.42 Babel common definitions
+\babel@savecnt=\count190
+\U@D=\dimen147
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\txtbabel.d
+ef")
+\bbl@readstream=\read2
+\bbl@dirlevel=\count191
+)
+Package babel Info: \l@canadian = using hyphenrules for english
+(babel)             (\language0) on input line 102.
+Package babel Info: \l@australian = using hyphenrules for ukenglish
+(babel)             (\language72) on input line 105.
+Package babel Info: \l@newzealand = using hyphenrules for ukenglish
+(babel)             (\language72) on input line 108.
+))
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\fontenc.sty"
+Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphicx.
+sty"
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphics.
+sty"
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\trig.sty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\graph
+ics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-def\pdfte
+x.def"
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen148
+\Gin@req@width=\dimen149
+)
+
+Class scrreprt Warning: Usage of package `fancyhdr' together
+(scrreprt)              with a KOMA-Script class is not recommended.
+(scrreprt)              I'd suggest to use 
+(scrreprt)              package `scrlayer' or `scrlayer-scrpage', because
+(scrreprt)              they support KOMA-Script classes.
+(scrreprt)              With `fancyhdr' several features of class `scrreprt'
+(scrreprt)              like options `headsepline', `footsepline' or command
+(scrreprt)              `\MakeMarkcase' and the commands `\setkomafont' and
+(scrreprt)              `\addtokomafont' for the page style elements need
+(scrreprt)              explicite user intervention to work.
+(scrreprt)              Nevertheless, using requested
+(scrreprt)              package `fancyhdr' on input line 25.
+
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fancyhdr\fancyhdr.
+sty"
+Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
+s
+\f@nch@headwidth=\skip65
+\f@nch@O@elh=\skip66
+\f@nch@O@erh=\skip67
+\f@nch@O@olh=\skip68
+\f@nch@O@orh=\skip69
+\f@nch@O@elf=\skip70
+\f@nch@O@erf=\skip71
+\f@nch@O@olf=\skip72
+\f@nch@O@orf=\skip73
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\lmodern.sty"
+Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\color.sty
+"
+Package: color 2019/11/23 v1.2a Standard LaTeX Color (DPC)
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\color
+.cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/bbold\bbold.sty"
+Package: bbold 1994/04/06 Bbold symbol package
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\listings.
+sty"
+\lst@mode=\count192
+\lst@gtempboxa=\box47
+\lst@token=\toks19
+\lst@length=\count193
+\lst@currlwidth=\dimen150
+\lst@column=\count194
+\lst@pos=\count195
+\lst@lostspace=\dimen151
+\lst@width=\dimen152
+\lst@newlines=\count196
+\lst@lineno=\count197
+\lst@maxwidth=\dimen153
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\lstmisc.s
+ty"
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+\c@lstnumber=\count198
+\lst@skipnumbers=\count199
+\lst@framebox=\box48
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\listings.
+cfg"
+File: listings.cfg 2020/03/24 1.8d listings configuration
+))
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/frontendlayer\
+tikz.sty"
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/basiclayer\pgf
+.sty"
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/utilities\pgfr
+cs.sty"
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pg
+futil-common.tex"
+\pgfutil@everybye=\toks20
+\pgfutil@tempdima=\dimen154
+\pgfutil@tempdimb=\dimen155
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pg
+futil-common-lists.tex"))
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pg
+futil-latex.def"
+\pgfutil@abb=\box49
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ms\everyshi.sty"
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pg
+frcs.code.tex"
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf\pgf.revision
+.tex")
+Package: pgfrcs 2020/01/08 v3.1.5b (3.1.5b)
+))
+Package: pgf 2020/01/08 v3.1.5b (3.1.5b)
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/basiclayer\pgf
+core.sty"
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/systemlayer\pg
+fsys.sty"
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlayer\
+pgfsys.code.tex"
+Package: pgfsys 2020/01/08 v3.1.5b (3.1.5b)
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pg
+fkeys.code.tex"
+\pgfkeys@pathtoks=\toks21
+\pgfkeys@temptoks=\toks22
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pg
+fkeysfiltered.code.tex"
+\pgfkeys@tmptoks=\toks23
+))
+\pgf@x=\dimen156
+\pgf@y=\dimen157
+\pgf@xa=\dimen158
+\pgf@ya=\dimen159
+\pgf@xb=\dimen160
+\pgf@yb=\dimen161
+\pgf@xc=\dimen162
+\pgf@yc=\dimen163
+\pgf@xd=\dimen164
+\pgf@yd=\dimen165
+\w@pgf@writea=\write3
+\r@pgf@reada=\read3
+\c@pgf@counta=\count266
+\c@pgf@countb=\count267
+\c@pgf@countc=\count268
+\c@pgf@countd=\count269
+\t@pgf@toka=\toks24
+\t@pgf@tokb=\toks25
+\t@pgf@tokc=\toks26
+\pgf@sys@id@count=\count270
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlayer\
+pgf.cfg"
+File: pgf.cfg 2020/01/08 v3.1.5b (3.1.5b)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlayer\
+pgfsys-pdftex.def"
+File: pgfsys-pdftex.def 2020/01/08 v3.1.5b (3.1.5b)
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlayer\
+pgfsys-common-pdf.def"
+File: pgfsys-common-pdf.def 2020/01/08 v3.1.5b (3.1.5b)
+)))
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlayer\
+pgfsyssoftpath.code.tex"
+File: pgfsyssoftpath.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfsyssoftpath@smallbuffer@items=\count271
+\pgfsyssoftpath@bigbuffer@items=\count272
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlayer\
+pgfsysprotocol.code.tex"
+File: pgfsysprotocol.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+))
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/xcolor\xcolor.sty"
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\color
+.cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+LaTeX Info: Redefining \color on input line 709.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
+gfcore.code.tex"
+Package: pgfcore 2020/01/08 v3.1.5b (3.1.5b)
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
+.code.tex"
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
+calc.code.tex"
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
+util.code.tex")
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
+parser.code.tex"
+\pgfmath@dimen=\dimen166
+\pgfmath@count=\count273
+\pgfmath@box=\box50
+\pgfmath@toks=\toks27
+\pgfmath@stack@operand=\toks28
+\pgfmath@stack@operation=\toks29
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
+functions.code.tex"
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
+functions.basic.code.tex")
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
+functions.trigonometric.code.tex")
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
+functions.random.code.tex")
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
+functions.comparison.code.tex")
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
+functions.base.code.tex")
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
+functions.round.code.tex")
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
+functions.misc.code.tex")
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
+functions.integerarithmetics.code.tex")))
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
+float.code.tex"
+\c@pgfmathroundto@lastzeros=\count274
+))
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfint.
+code.tex")
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
+gfcorepoints.code.tex"
+File: pgfcorepoints.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@picminx=\dimen167
+\pgf@picmaxx=\dimen168
+\pgf@picminy=\dimen169
+\pgf@picmaxy=\dimen170
+\pgf@pathminx=\dimen171
+\pgf@pathmaxx=\dimen172
+\pgf@pathminy=\dimen173
+\pgf@pathmaxy=\dimen174
+\pgf@xx=\dimen175
+\pgf@xy=\dimen176
+\pgf@yx=\dimen177
+\pgf@yy=\dimen178
+\pgf@zx=\dimen179
+\pgf@zy=\dimen180
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
+gfcorepathconstruct.code.tex"
+File: pgfcorepathconstruct.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@path@lastx=\dimen181
+\pgf@path@lasty=\dimen182
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
+gfcorepathusage.code.tex"
+File: pgfcorepathusage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@shorten@end@additional=\dimen183
+\pgf@shorten@start@additional=\dimen184
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
+gfcorescopes.code.tex"
+File: pgfcorescopes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfpic=\box51
+\pgf@hbox=\box52
+\pgf@layerbox@main=\box53
+\pgf@picture@serial@count=\count275
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
+gfcoregraphicstate.code.tex"
+File: pgfcoregraphicstate.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgflinewidth=\dimen185
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
+gfcoretransformations.code.tex"
+File: pgfcoretransformations.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@pt@x=\dimen186
+\pgf@pt@y=\dimen187
+\pgf@pt@temp=\dimen188
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
+gfcorequick.code.tex"
+File: pgfcorequick.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
+gfcoreobjects.code.tex"
+File: pgfcoreobjects.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
+gfcorepathprocessing.code.tex"
+File: pgfcorepathprocessing.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
+gfcorearrows.code.tex"
+File: pgfcorearrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfarrowsep=\dimen189
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
+gfcoreshade.code.tex"
+File: pgfcoreshade.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@max=\dimen190
+\pgf@sys@shading@range@num=\count276
+\pgf@shadingcount=\count277
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
+gfcoreimage.code.tex"
+File: pgfcoreimage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
+gfcoreexternal.code.tex"
+File: pgfcoreexternal.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfexternal@startupbox=\box54
+))
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
+gfcorelayers.code.tex"
+File: pgfcorelayers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
+gfcoretransparency.code.tex"
+File: pgfcoretransparency.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
+gfcorepatterns.code.tex"
+File: pgfcorepatterns.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\p
+gfcorerdf.code.tex"
+File: pgfcorerdf.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)))
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/modules\pgfm
+oduleshapes.code.tex"
+File: pgfmoduleshapes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfnodeparttextbox=\box55
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/modules\pgfm
+oduleplot.code.tex"
+File: pgfmoduleplot.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/compatibility\
+pgfcomp-version-0-65.sty"
+Package: pgfcomp-version-0-65 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@nodesepstart=\dimen191
+\pgf@nodesepend=\dimen192
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/compatibility\
+pgfcomp-version-1-18.sty"
+Package: pgfcomp-version-1-18 2020/01/08 v3.1.5b (3.1.5b)
+))
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/utilities\pgff
+or.sty"
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/utilities\pgfk
+eys.sty"
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pg
+fkeys.code.tex"))
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/math\pgfmath.s
+ty"
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
+.code.tex"))
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pg
+ffor.code.tex"
+Package: pgffor 2020/01/08 v3.1.5b (3.1.5b)
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath
+.code.tex")
+\pgffor@iter=\dimen193
+\pgffor@skip=\dimen194
+\pgffor@stack=\toks30
+\pgffor@toks=\toks31
+))
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlaye
+r/tikz\tikz.code.tex"
+Package: tikz 2020/01/08 v3.1.5b (3.1.5b)
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries\pg
+flibraryplothandlers.code.tex"
+File: pgflibraryplothandlers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@plot@mark@count=\count278
+\pgfplotmarksize=\dimen195
+)
+\tikz@lastx=\dimen196
+\tikz@lasty=\dimen197
+\tikz@lastxsaved=\dimen198
+\tikz@lastysaved=\dimen199
+\tikz@lastmovetox=\dimen256
+\tikz@lastmovetoy=\dimen257
+\tikzleveldistance=\dimen258
+\tikzsiblingdistance=\dimen259
+\tikz@figbox=\box56
+\tikz@figbox@bg=\box57
+\tikz@tempbox=\box58
+\tikz@tempbox@bg=\box59
+\tikztreelevel=\count279
+\tikznumberofchildren=\count280
+\tikznumberofcurrentchild=\count281
+\tikz@fig@count=\count282
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/modules\pgfm
+odulematrix.code.tex"
+File: pgfmodulematrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfmatrixcurrentrow=\count283
+\pgfmatrixcurrentcolumn=\count284
+\pgf@matrix@numberofcolumns=\count285
+)
+\tikz@expandcount=\count286
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlaye
+r/tikz/libraries\tikzlibrarytopaths.code.tex"
+File: tikzlibrarytopaths.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)))
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgfplots\pgfplots.
+sty"
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots\pgfplot
+s.revision.tex")
+Package: pgfplots 2020/02/29 v1.17 Data Visualization (1.17)
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots\pgfplot
+s.code.tex"
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots\pgfplot
+score.code.tex"
+\t@pgfplots@toka=\toks32
+\t@pgfplots@tokb=\toks33
+\t@pgfplots@tokc=\toks34
+\pgfplots@tmpa=\dimen260
+\c@pgfplots@coordindex=\count287
+\c@pgfplots@scanlineindex=\count288
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/sys\pgf
+plotssysgeneric.code.tex"))
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/libs\pg
+fplotslibrary.code.tex")
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/oldpgfc
+ompatib\pgfplotsoldpgfsupp_loader.code.tex"
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries\pg
+flibraryfpu.code.tex"))
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/util\pg
+fplotsutil.code.tex"
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/liststr
+ucture\pgfplotsliststructure.code.tex")
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/liststr
+ucture\pgfplotsliststructureext.code.tex")
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/liststr
+ucture\pgfplotsarray.code.tex"
+\c@pgfplotsarray@tmp=\count289
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/liststr
+ucture\pgfplotsmatrix.code.tex")
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/numtabl
+e\pgfplotstableshared.code.tex"
+\c@pgfplotstable@counta=\count290
+\t@pgfplotstable@a=\toks35
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/liststr
+ucture\pgfplotsdeque.code.tex")
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/util\pg
+fplotsbinary.code.tex"
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/util\pg
+fplotsbinary.data.code.tex"))
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/util\pg
+fplotsutil.verb.code.tex")
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/libs\pg
+flibrarypgfplots.surfshading.code.tex"
+\c@pgfplotslibrarysurf@no=\count291
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/sys\pgf
+librarypgfplots.surfshading.pgfsys-pdftex.def")))
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/util\pg
+fplotscolormap.code.tex"
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots/util\pg
+fplotscolor.code.tex"))
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots\pgfplot
+sstackedplots.code.tex")
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots\pgfplot
+splothandlers.code.tex"
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots\pgfplot
+smeshplothandler.code.tex"
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots\pgfplot
+smeshplotimage.code.tex")))
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots\pgfplot
+s.scaling.code.tex")
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots\pgfplot
+scoordprocessing.code.tex")
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots\pgfplot
+s.errorbars.code.tex")
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots\pgfplot
+s.markers.code.tex")
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots\pgfplot
+sticks.code.tex")
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgfplots\pgfplot
+s.paths.code.tex")
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlaye
+r/tikz/libraries\tikzlibrarydecorations.code.tex"
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/modules\pgfm
+oduledecorations.code.tex"
+\pgfdecoratedcompleteddistance=\dimen261
+\pgfdecoratedremainingdistance=\dimen262
+\pgfdecoratedinputsegmentcompleteddistance=\dimen263
+\pgfdecoratedinputsegmentremainingdistance=\dimen264
+\pgf@decorate@distancetomove=\dimen265
+\pgf@decorate@repeatstate=\count292
+\pgfdecorationsegmentamplitude=\dimen266
+\pgfdecorationsegmentlength=\dimen267
+)
+\tikz@lib@dec@box=\box60
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlaye
+r/tikz/libraries\tikzlibrarydecorations.pathmorphing.code.tex"
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries/de
+corations\pgflibrarydecorations.pathmorphing.code.tex"))
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlaye
+r/tikz/libraries\tikzlibrarydecorations.pathreplacing.code.tex"
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries/de
+corations\pgflibrarydecorations.pathreplacing.code.tex"))
+\pgfplots@numplots=\count293
+\pgfplots@xmin@reg=\dimen268
+\pgfplots@xmax@reg=\dimen269
+\pgfplots@ymin@reg=\dimen270
+\pgfplots@ymax@reg=\dimen271
+\pgfplots@zmin@reg=\dimen272
+\pgfplots@zmax@reg=\dimen273
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlaye
+r/tikz/libraries\tikzlibraryplotmarks.code.tex"
+File: tikzlibraryplotmarks.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries\pg
+flibraryplotmarks.code.tex"
+File: pgflibraryplotmarks.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)))
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\epsfig.st
+y"
+Package: epsfig 2017/06/25 v1.7b (e)psfig emulation (SPQR)
+\epsfxsize=\dimen274
+\epsfysize=\dimen275
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\subcaption
+.sty"
+Package: subcaption 2020/01/22 v1.3d Sub-captions (AR)
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption.st
+y"
+Package: caption 2020/01/03 v3.4h Customizing captions (AR)
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption3.s
+ty"
+Package: caption3 2020/01/03 v1.8h caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 61.
+\captionmargin=\dimen276
+\captionmargin@=\dimen277
+\captionwidth=\dimen278
+\caption@tempdima=\dimen279
+\caption@indent=\dimen280
+\caption@parindent=\dimen281
+\caption@hangindent=\dimen282
+Package caption Info: KOMA-Script document class detected.
+)
+Package caption Info: KOMA-Script document class.
+\c@caption@flags=\count294
+\c@continuedfloat=\count295
+Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
+)
+\c@subfigure=\count296
+\c@subtable=\count297
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/placeins\placeins.
+sty"
+Package: placeins 2005/04/18  v 2.2
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\amsfonts.
+sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks36
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsmath.st
+y"
+Package: amsmath 2020/01/20 v2.17e AMS math features
+\@mathmargin=\skip74
+
+For additional information on amsmath, use the `?' option.
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amstext.st
+y"
+Package: amstext 2000/06/29 v2.01 AMS text
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsgen.sty
+"
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks37
+\ex@=\dimen283
+))
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsbsy.sty
+"
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen284
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsopn.sty
+"
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count298
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count299
+\leftroot@=\count300
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count301
+\DOTSCASE@=\count302
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box61
+\strutbox@=\box62
+\big@size=\dimen285
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count303
+\c@MaxMatrixCols=\count304
+\dotsspace@=\muskip17
+\c@parentequation=\count305
+\dspbrk@lvl=\count306
+\tag@help=\toks38
+\row@=\count307
+\column@=\count308
+\maxfields@=\count309
+\andhelp@=\toks39
+\eqnshift@=\dimen286
+\alignsep@=\dimen287
+\tagshift@=\dimen288
+\tagwidth@=\dimen289
+\totwidth@=\dimen290
+\lineht@=\dimen291
+\@envbody=\toks40
+\multlinegap=\skip75
+\multlinetaggap=\skip76
+\mathdisplay@stack=\toks41
+LaTeX Info: Redefining \[ on input line 2859.
+LaTeX Info: Redefining \] on input line 2860.
+) ("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\bm.sty"
+Package: bm 2019/07/24 v1.2d Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup6
+\symboldletters=\mathgroup7
+\symboldsymbols=\mathgroup8
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
+LaTeX Info: Redefining \bm on input line 209.
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\amssymb.s
+ty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3backend\l3backen
+d-pdfmode.def"
+File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count310
+\l__pdf_internal_box=\box63
+) ("00_Vorlage Abschlussarbeit.aux" (01_title.aux)
+(02_acknowledgements.aux) (03_abstract.aux) (04_introduction.aux)
+(05_basics.aux
+
+LaTeX Warning: Label `eq:' multiply defined.
+
+) (06_methods.aux) (07_results.aux) (08_discussion.aux) (09_appendices.aux))
+\openout1 = `"00_Vorlage Abschlussarbeit.aux"'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 90
+.
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\t1lmr.fd"
+File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Package scrbase Info: activating english \contentsname on input line 90.
+Package scrbase Info: activating english \listfigurename on input line 90.
+Package scrbase Info: activating english \listtablename on input line 90.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(71.13188pt, 469.47049pt, 56.9055pt)
+* v-part:(T,H,B)=(101.40665pt, 629.82918pt, 113.81102pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=469.47049pt
+* \textheight=629.82918pt
+* \oddsidemargin=-1.1381pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-10.73834pt
+* \headheight=18.125pt
+* \headsep=21.75pt
+* \topskip=12.0pt
+* \footskip=50.75pt
+* \marginparwidth=49.79233pt
+* \marginparsep=12.8401pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+\AtBeginShipoutBox=\box64
+Package hyperref Info: Link coloring OFF on input line 90.
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\nameref.s
+ty"
+Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/refcount\refcount.
+sty"
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/generic/gettitlestring\g
+ettitlestring.sty"
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count311
+)
+LaTeX Info: Redefining \ref on input line 90.
+LaTeX Info: Redefining \pageref on input line 90.
+LaTeX Info: Redefining \nameref on input line 90.
+ ("00_Vorlage Abschlussarbeit.out")
+("00_Vorlage Abschlussarbeit.out")
+\@outlinefile=\write4
+\openout4 = `"00_Vorlage Abschlussarbeit.out"'.
+
+Class scrreprt Info: loading recommended package `bookmark'.
+(scrreprt)           Using `bookmark' together with `hyperref' is recommended,
+(scrreprt)           because of handling of possible bookmark level gaps.
+(scrreprt)           You can avoid loading `bookmark' with KOMA-Script option
+(scrreprt)           `bookmarkpackage=false' before \begin{document} and
+(scrreprt)           you can avoid this message adding:
+(scrreprt)             \usepackage{bookmark}
+(scrreprt)           before \begin{document} on input line 90.
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/bookmark\bookmark.
+sty"
+Package: bookmark 2019/12/03 v1.28 PDF bookmarks (HO)
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/bookmark\bkm-pdfte
+x.def"
+File: bkm-pdftex.def 2019/12/03 v1.28 bookmark driver for pdfTeX (HO)
+Package auxhook Info: \AddLineBeginMainAux comes a little late,
+(auxhook)             because the main .aux file is already opened on input lin
+e 168.
+\BKM@id=\count312
+))
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-p
+df.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count313
+\scratchdimen=\dimen292
+\scratchbox=\box65
+\nofMPsegments=\count314
+\nofMParguments=\count315
+\everyMPshowfont=\toks42
+\MPscratchCnt=\count316
+\MPscratchDim=\dimen293
+\MPnumerator=\count317
+\makeMPintoPDFobject=\count318
+\everyMPtoPDFconversion=\toks43
+)
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epstopdf-pkg\epsto
+pdf-base.sty"
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+)
+\c@lstlisting=\count319
+ ABD: EveryShipout initializing macros
+
+Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
+ick labels; missing features). Consider writing \pgfplotsset{compat=1.17} into 
+your preamble.
+ on input line 90.
+
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+\openout2 = `01_title.aux'.
+
+(01_title.tex
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2
+.
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\ot1lmr.fd"
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
+.
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\omllmm.fd"
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+2.
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\omslmsy.fd"
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+2.
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\omxlmex.fd"
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 2.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 2.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 2.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+<img/01_0/fias.jpg, id=6, 624.3325pt x 199.74625pt>
+File: img/01_0/fias.jpg Graphic file (type jpg)
+<use img/01_0/fias.jpg>
+Package pdftex.def Info: img/01_0/fias.jpg  used on input line 4.
+(pdftex.def)             Requested size: 312.16548pt x 99.87288pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 2--46
+ [] 
+ []
+
+) [1
+
+
+{C:/Users/Jesse/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./img/01_0/
+fias.jpg>]
+\openout2 = `02_acknowledgements.aux'.
+
+ (02_acknowledgements.tex
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 1
+.
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\t1lmss.fd"
+File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Underfull \hbox (badness 10000) in paragraph at lines 3--7
+
+ []
+
+[2
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 11--14
+
+ []
+
+) [3]
+\openout2 = `03_abstract.aux'.
+
+ (03_abstract.tex) [4
+
+
+] ("00_Vorlage Abschlussarbeit.toc" [5
+
+
+
+
+])
+\tf@toc=\write5
+\openout5 = `"00_Vorlage Abschlussarbeit.toc"'.
+
+ [6]
+("00_Vorlage Abschlussarbeit.lof" [7
+
+])
+\tf@lof=\write6
+\openout6 = `"00_Vorlage Abschlussarbeit.lof"'.
+
+ [8]
+\openout2 = `04_introduction.aux'.
+
+ (04_introduction.tex
+chapter 1.
+
+Class scrreprt Warning: \float@addtolists detected!
+(scrreprt)              Implementation of \float@addtolist became
+(scrreprt)              deprecated in KOMA-Script v3.01 2008/11/14 and
+(scrreprt)              has been replaced by several more flexible
+(scrreprt)              features of package `tocbasic`.
+(scrreprt)              Since Version 3.12 support for deprecated
+(scrreprt)              \float@addtolist interface has been
+(scrreprt)              restricted to only some of the KOMA-Script
+(scrreprt)              features and been removed from others.
+(scrreprt)              Loading of package `scrhack' may help to
+(scrreprt)              avoid this warning, if you are using a
+(scrreprt)              a package that still implements the
+(scrreprt)              deprecated \float@addtolist interface .
+
+)
+Underfull \hbox (badness 10000) in paragraph at lines 3--113
+
+ []
+
+[9
+
+
+] [10]
+\openout2 = `05_basics.aux'.
+
+ (05_basics.tex
+chapter 2.
+(05_01_portfolio.tex
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
+.
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\ts1lmr.fd"
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+[11
+
+
+
+]
+LaTeX Font Info:    Trying to load font information for U+bbold on input line 3
+8.
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/bbold\ubbold.fd")
+[12pdfTeX warning (ext4): destination with the same identifier (name{equation.2
+.1.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.47 \end{equation}
+                   pdfTeX warning (ext4): destination with the same identifier 
+(name{equation.2.1.2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.47 \end{equation}
+                   ]pdfTeX warning (ext4): destination with the same identifier
+ (name{equation.2.1.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.54 	\end{align}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{equation.2.1.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.54 	\end{align}
+                 
+
+LaTeX Warning: Reference `sec:gplvm_finance' on page 13 undefined on input line
+ 62.
+
+) [13] (05_02_capm.texpdfTeX warning (ext4): destination with the same identifi
+er (name{equation.2.1.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.27 	\end{align}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{equation.2.1.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.27 	\end{align}
+                  [14
+
+
+]pdfTeX warning (ext4): destination with the same identifier (name{equation.2.1
+.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.60 	\end{align}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{equation.2.1.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.60 	\end{align}
+                 ) [15] (05_03_arch_garch.texpdfTeX warning (ext4): destination
+ with the same identifier (name{equation.2.1.1}) has been already used, duplica
+te ignored
+<to be read again> 
+                   \relax 
+l.22 	\end{align}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{equation.2.1.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.22 	\end{align}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{equation.2.1.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.22 	\end{align}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{equation.2.1.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.30 	\end{align}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{equation.2.1.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.30 	\end{align}
+                 ) [16
+
+
+] (05_1_introduction.tex
+<img/05_1/fair_coinflip.png, id=379, 433.62pt x 289.08pt>
+File: img/05_1/fair_coinflip.png Graphic file (type png)
+<use img/05_1/fair_coinflip.png>
+Package pdftex.def Info: img/05_1/fair_coinflip.png  used on input line 4.
+(pdftex.def)             Requested size: 289.07999pt x 192.72981pt.
+<img/05_1/unfair_coinflip.png, id=381, 433.62pt x 289.08pt>
+File: img/05_1/unfair_coinflip.png Graphic file (type png)
+<use img/05_1/unfair_coinflip.png>
+Package pdftex.def Info: img/05_1/unfair_coinflip.png  used on input line 11.
+(pdftex.def)             Requested size: 289.07999pt x 192.72981pt.
+)
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[17
+
+
+ <./img/05_1/fair_coinflip.png>] [18 <./img/05_1/unfair_coinflip.png>]
+(05_2_bayes.tex [19
+
+
+] [20]) [21] (05_3_GP.texpdfTeX warning (ext4): destination with the same ident
+ifier (name{equation.2.2.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.11 	\end{align}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{equation.2.2.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.11 	\end{align}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{equation.2.2.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.19 	\end{align}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{equation.2.2.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.19 	\end{align}
+                  [22
+
+
+]pdfTeX warning (ext4): destination with the same identifier (name{equation.2.2
+.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.47 	\end{align}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{equation.2.2.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.47 	\end{align}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{equation.2.2.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.56 	\end{align}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{equation.2.2.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.56 	\end{align}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{equation.2.2.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.56 	\end{align}
+                 
+Underfull \hbox (badness 10000) in paragraph at lines 62--64
+
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{equation.2.2.
+1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.73 	\end{align}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{equation.2.2.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.73 	\end{align}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{equation.2.2.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.73 	\end{align}
+                  [23]pdfTeX warning (ext4): destination with the same identifi
+er (name{equation.2.2.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.81 	\end{align}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{equation.2.2.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.81 	\end{align}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{equation.2.2.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.117 	\end{align}
+                   [24]
+<img/05_3/gp_prior.png, id=464, 433.62pt x 289.08pt>
+File: img/05_3/gp_prior.png Graphic file (type png)
+<use img/05_3/gp_prior.png>
+Package pdftex.def Info: img/05_3/gp_prior.png  used on input line 133.
+(pdftex.def)             Requested size: 289.07999pt x 192.72981pt.
+<img/05_3/generated_data.png, id=466, 433.62pt x 289.08pt>
+File: img/05_3/generated_data.png Graphic file (type png)
+<use img/05_3/generated_data.png>
+Package pdftex.def Info: img/05_3/generated_data.png  used on input line 141.
+(pdftex.def)             Requested size: 289.07999pt x 192.72981pt.
+<img/05_3/gp_samples.png, id=469, 433.62pt x 289.08pt>
+File: img/05_3/gp_samples.png Graphic file (type png)
+<use img/05_3/gp_samples.png>
+Package pdftex.def Info: img/05_3/gp_samples.png  used on input line 151.
+(pdftex.def)             Requested size: 260.17401pt x 173.44933pt.
+
+Overfull \hbox (48.91373pt too wide) in paragraph at lines 151--152
+ [][] 
+ []
+
+<img/05_3/gp_confints.png, id=470, 433.62pt x 289.08pt>
+File: img/05_3/gp_confints.png Graphic file (type png)
+<use img/05_3/gp_confints.png>
+Package pdftex.def Info: img/05_3/gp_confints.png  used on input line 157.
+(pdftex.def)             Requested size: 260.17401pt x 173.44933pt.
+
+Overfull \hbox (48.91373pt too wide) in paragraph at lines 157--158
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[25 <./img/05_3/gp_prior.png>]) [26 <./img/05_3/generated_data.png> <./img/05_3
+/gp_samples.png> <./img/05_3/gp_confints.png>] (05_4_kernels.tex
+Underfull \hbox (badness 10000) in paragraph at lines 13--16
+
+ []
+
+[27
+
+
+]
+
+Package caption Warning: \label without proper reference on input line 49.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:lengthscale' on page 28 undefined on input line 4
+7.
+
+<img/05_4/lengthscale.png, id=497, 696.35156pt x 590.95781pt>
+File: img/05_4/lengthscale.png Graphic file (type png)
+<use img/05_4/lengthscale.png>
+Package pdftex.def Info: img/05_4/lengthscale.png  used on input line 51.
+(pdftex.def)             Requested size: 289.07999pt x 245.32407pt.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 44--40
+
+ []
+
+[28] [29 <./img/05_4/lengthscale.png>] (05_5_latentGP.tex
+Underfull \hbox (badness 10000) in paragraph at lines 1--4
+
+ []
+
+[30
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 28--32
+
+ []
+
+) [31] (05_8_student.tex [32
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{equation.2.3.
+1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.44 	\end{align}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{equation.2.3.2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.44 	\end{align}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{equation.2.3.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.44 	\end{align}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{equation.2.3.2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.44 	\end{align}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{equation.2.3.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.44 	\end{align}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{equation.2.3.2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.44 	\end{align}
+                 ]
+<img/05_8/GP_samples.png, id=552, 867.24pt x 361.35pt>
+File: img/05_8/GP_samples.png Graphic file (type png)
+<use img/05_8/GP_samples.png>
+Package pdftex.def Info: img/05_8/GP_samples.png  used on input line 51.
+(pdftex.def)             Requested size: 346.88986pt x 144.53743pt.
+<img/05_8/TP_samples.png, id=553, 867.24pt x 361.35pt>
+File: img/05_8/TP_samples.png Graphic file (type png)
+<use img/05_8/TP_samples.png>
+Package pdftex.def Info: img/05_8/TP_samples.png  used on input line 57.
+(pdftex.def)             Requested size: 346.88986pt x 144.53743pt.
+ [33pdfTeX warning (ext4): destination with the same identifier (name{equation.
+2.3.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.66 	\begin{align}
+                   pdfTeX warning (ext4): destination with the same identifier 
+(name{equation.2.3.2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.66 	\begin{align}
+                    <./img/05_8/GP_samples.png> <./img/05_8/TP_samples.png>]pdf
+TeX warning (ext4): destination with the same identifier (name{equation.2.3.1})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.71 	\end{align}
+                 ) [34] (05_06_MCMC.tex
+<img/05_6/MetropolisHastingsConvergence.png, id=575, 606.265pt x 607.26875pt>
+File: img/05_6/MetropolisHastingsConvergence.png Graphic file (type png)
+<use img/05_6/MetropolisHastingsConvergence.png>
+Package pdftex.def Info: img/05_6/MetropolisHastingsConvergence.png  used on in
+put line 4.
+(pdftex.def)             Requested size: 289.07999pt x 289.55833pt.
+ [35
+
+
+ <./img/05_6/MetropolisHastingsConvergence.png>] [36]pdfTeX warning (ext4): des
+tination with the same identifier (name{equation.2.4.1}) has been already used,
+ duplicate ignored
+<to be read again> 
+                   \relax 
+l.46 	\end{align}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{equation.2.4.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.46 	\end{align}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{equation.2.4.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.54 	\end{align}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{equation.2.4.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.54 	\end{align}
+                 ) [37] [38])
+\openout2 = `06_methods.aux'.
+
+ (06_methods.tex
+chapter 3.
+(06_0_models.tex
+
+LaTeX Warning: Reference `sec:gplvm_finance' on page 39 undefined on input line
+ 4.
+
+[39
+
+
+
+
+
+]pdfTeX warning (ext4): destination with the same identifier (name{equation.3.1
+.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.50 	\end{align}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{equation.3.1.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.50 	\end{align}
+                  [40]
+
+LaTeX Warning: Reference `sec:model_code' on page 41 undefined on input line 89
+.
+
+[41]
+
+LaTeX Warning: Reference `sec:model_code' on page 42 undefined on input line 11
+4.
+
+) [42] (06_1_programs.tex
+<img/06_1/ThesisOverview.png, id=653, 3767.82657pt x 9705.25874pt>
+File: img/06_1/ThesisOverview.png Graphic file (type png)
+<use img/06_1/ThesisOverview.png>
+Package pdftex.def Info: img/06_1/ThesisOverview.png  used on input line 5.
+(pdftex.def)             Requested size: 170.71652pt x 439.67961pt.
+
+
+Package caption Warning: \label without proper reference on input line 3.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:program_sequence' on page 43 undefined on input l
+ine 9.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--15
+
+ []
+
+[43
+
+
+] [44 <./img/06_1/ThesisOverview.png>] [45]
+Overfull \hbox (5.72556pt too wide) in paragraph at lines 75--76
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+] 
+ []
+
+[46]) [47] [48])
+\openout2 = `07_results.aux'.
+
+ (07_results.tex
+chapter 4.
+(07_0_gplvm.tex
+<img/07_0/K_111_120_samples.png, id=863, 433.62pt x 289.08pt>
+File: img/07_0/K_111_120_samples.png Graphic file (type png)
+<use img/07_0/K_111_120_samples.png>
+Package pdftex.def Info: img/07_0/K_111_120_samples.png  used on input line 18.
+
+(pdftex.def)             Requested size: 187.78532pt x 125.18858pt.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 19.
+<img/07_0/K_10_12_samples.png, id=864, 433.62pt x 289.08pt>
+File: img/07_0/K_10_12_samples.png Graphic file (type png)
+<use img/07_0/K_10_12_samples.png>
+Package pdftex.def Info: img/07_0/K_10_12_samples.png  used on input line 23.
+(pdftex.def)             Requested size: 187.78532pt x 125.18858pt.
+
+Underfull \hbox (badness 1902) in paragraph at lines 24--24
+[][][]|\T1/lmr/m/n/10.95 The en-try 10/12 of the co-vari-
+ []
+
+[49
+
+
+
+
+
+ <./img/07_0/K_111_120_samples.png> <./img/07_0/K_10_12_samples.png>]
+<img/07_0/problem.jpg, id=882, 439.72733pt x 293.15155pt>
+File: img/07_0/problem.jpg Graphic file (type jpg)
+<use img/07_0/problem.jpg>
+Package pdftex.def Info: img/07_0/problem.jpg  used on input line 43.
+(pdftex.def)             Requested size: 289.07999pt x 192.72017pt.
+<img/07_0/modelGPLVM_Qs.png, id=884, 1445.4pt x 722.7pt>
+File: img/07_0/modelGPLVM_Qs.png Graphic file (type png)
+<use img/07_0/modelGPLVM_Qs.png>
+Package pdftex.def Info: img/07_0/modelGPLVM_Qs.png  used on input line 51.
+(pdftex.def)             Requested size: 505.89pt x 252.93776pt.
+
+Overfull \hbox (36.41951pt too wide) in paragraph at lines 51--52
+ [][] 
+ []
+
+<img/07_0/intercept_fit_gplvm_120.png, id=887, 1445.4pt x 578.16pt>
+File: img/07_0/intercept_fit_gplvm_120.png Graphic file (type png)
+<use img/07_0/intercept_fit_gplvm_120.png>
+Package pdftex.def Info: img/07_0/intercept_fit_gplvm_120.png  used on input li
+ne 58.
+(pdftex.def)             Requested size: 505.89pt x 202.3502pt.
+
+Overfull \hbox (36.41951pt too wide) in paragraph at lines 58--59
+ [][] 
+ []
+
+<img/07_0/slope_fit_gplvm_120.png, id=888, 1445.4pt x 578.16pt>
+File: img/07_0/slope_fit_gplvm_120.png Graphic file (type png)
+<use img/07_0/slope_fit_gplvm_120.png>
+Package pdftex.def Info: img/07_0/slope_fit_gplvm_120.png  used on input line 6
+4.
+(pdftex.def)             Requested size: 505.89pt x 202.3502pt.
+
+Overfull \hbox (36.41951pt too wide) in paragraph at lines 64--66
+ [][] 
+ []
+
+<img/07_0/noise_GPLVM_120.png, id=889, 1445.4pt x 578.16pt>
+File: img/07_0/noise_GPLVM_120.png Graphic file (type png)
+<use img/07_0/noise_GPLVM_120.png>
+Package pdftex.def Info: img/07_0/noise_GPLVM_120.png  used on input line 73.
+(pdftex.def)             Requested size: 505.89pt x 202.3502pt.
+
+Overfull \hbox (36.41951pt too wide) in paragraph at lines 73--75
+ [][] 
+ []
+
+<img/07_0/std_GPLVM_120.png, id=891, 1445.4pt x 578.16pt>
+File: img/07_0/std_GPLVM_120.png Graphic file (type png)
+<use img/07_0/std_GPLVM_120.png>
+Package pdftex.def Info: img/07_0/std_GPLVM_120.png  used on input line 81.
+(pdftex.def)             Requested size: 505.89pt x 202.3502pt.
+
+Overfull \hbox (36.41951pt too wide) in paragraph at lines 81--83
+ [][] 
+ []
+
+<img/07_0/K_GPLVM_120.png, id=894, 1445.4pt x 578.16pt>
+File: img/07_0/K_GPLVM_120.png Graphic file (type png)
+<use img/07_0/K_GPLVM_120.png>
+Package pdftex.def Info: img/07_0/K_GPLVM_120.png  used on input line 90.
+(pdftex.def)             Requested size: 505.89pt x 202.3502pt.
+
+Overfull \hbox (36.41951pt too wide) in paragraph at lines 90--92
+ [][] 
+ []
+
+<img/07_0/N20/Q3_kernel3_stock1_scatter.png, id=904, 433.62pt x 289.08pt>
+File: img/07_0/N20/Q3_kernel3_stock1_scatter.png Graphic file (type png)
+<use img/07_0/N20/Q3_kernel3_stock1_scatter.png>
+Package pdftex.def Info: img/07_0/N20/Q3_kernel3_stock1_scatter.png  used on in
+put line 99.
+(pdftex.def)             Requested size: 140.84258pt x 93.89694pt.
+<img/07_0/N20/Q3_kernel3_stock2_scatter.png, id=905, 433.62pt x 289.08pt>
+File: img/07_0/N20/Q3_kernel3_stock2_scatter.png Graphic file (type png)
+<use img/07_0/N20/Q3_kernel3_stock2_scatter.png>
+Package pdftex.def Info: img/07_0/N20/Q3_kernel3_stock2_scatter.png  used on in
+put line 102.
+(pdftex.def)             Requested size: 140.84258pt x 93.89694pt.
+<img/07_0/N20/Q3_kernel3_stock9_scatter.png, id=906, 433.62pt x 289.08pt>
+File: img/07_0/N20/Q3_kernel3_stock9_scatter.png Graphic file (type png)
+<use img/07_0/N20/Q3_kernel3_stock9_scatter.png>
+Package pdftex.def Info: img/07_0/N20/Q3_kernel3_stock9_scatter.png  used on in
+put line 105.
+(pdftex.def)             Requested size: 140.84258pt x 93.89694pt.
+<img/07_0/N60/Q1_kernel1_stock1_scatter.png, id=907, 433.62pt x 289.08pt>
+File: img/07_0/N60/Q1_kernel1_stock1_scatter.png Graphic file (type png)
+<use img/07_0/N60/Q1_kernel1_stock1_scatter.png>
+Package pdftex.def Info: img/07_0/N60/Q1_kernel1_stock1_scatter.png  used on in
+put line 113.
+(pdftex.def)             Requested size: 140.84258pt x 93.89694pt.
+<img/07_0/N60/Q1_kernel1_stock2_scatter.png, id=908, 433.62pt x 289.08pt>
+File: img/07_0/N60/Q1_kernel1_stock2_scatter.png Graphic file (type png)
+<use img/07_0/N60/Q1_kernel1_stock2_scatter.png>
+Package pdftex.def Info: img/07_0/N60/Q1_kernel1_stock2_scatter.png  used on in
+put line 116.
+(pdftex.def)             Requested size: 140.84258pt x 93.89694pt.
+<img/07_0/N60/Q1_kernel1_stock3_scatter.png, id=909, 433.62pt x 289.08pt>
+File: img/07_0/N60/Q1_kernel1_stock3_scatter.png Graphic file (type png)
+<use img/07_0/N60/Q1_kernel1_stock3_scatter.png>
+Package pdftex.def Info: img/07_0/N60/Q1_kernel1_stock3_scatter.png  used on in
+put line 119.
+(pdftex.def)             Requested size: 140.84258pt x 93.89694pt.
+<img/07_0/N100/Q1_kernel1_stock1_scatter.png, id=910, 433.62pt x 289.08pt>
+File: img/07_0/N100/Q1_kernel1_stock1_scatter.png Graphic file (type png)
+<use img/07_0/N100/Q1_kernel1_stock1_scatter.png>
+Package pdftex.def Info: img/07_0/N100/Q1_kernel1_stock1_scatter.png  used on i
+nput line 127.
+(pdftex.def)             Requested size: 140.84258pt x 93.89694pt.
+<img/07_0/N100/Q1_kernel1_stock2_scatter.png, id=911, 433.62pt x 289.08pt>
+File: img/07_0/N100/Q1_kernel1_stock2_scatter.png Graphic file (type png)
+<use img/07_0/N100/Q1_kernel1_stock2_scatter.png>
+Package pdftex.def Info: img/07_0/N100/Q1_kernel1_stock2_scatter.png  used on i
+nput line 130.
+(pdftex.def)             Requested size: 140.84258pt x 93.89694pt.
+<img/07_0/N100/Q1_kernel1_stock3_scatter.png, id=912, 433.62pt x 289.08pt>
+File: img/07_0/N100/Q1_kernel1_stock3_scatter.png Graphic file (type png)
+<use img/07_0/N100/Q1_kernel1_stock3_scatter.png>
+Package pdftex.def Info: img/07_0/N100/Q1_kernel1_stock3_scatter.png  used on i
+nput line 133.
+(pdftex.def)             Requested size: 140.84258pt x 93.89694pt.
+<img/07_0/N120/Q1_kernel3_stock6_scatter.png, id=913, 433.62pt x 289.08pt>
+File: img/07_0/N120/Q1_kernel3_stock6_scatter.png Graphic file (type png)
+<use img/07_0/N120/Q1_kernel3_stock6_scatter.png>
+Package pdftex.def Info: img/07_0/N120/Q1_kernel3_stock6_scatter.png  used on i
+nput line 141.
+(pdftex.def)             Requested size: 140.84258pt x 93.89694pt.
+<img/07_0/N120/Q6_kernel1_stock4_scatter.png, id=914, 433.62pt x 289.08pt>
+File: img/07_0/N120/Q6_kernel1_stock4_scatter.png Graphic file (type png)
+<use img/07_0/N120/Q6_kernel1_stock4_scatter.png>
+Package pdftex.def Info: img/07_0/N120/Q6_kernel1_stock4_scatter.png  used on i
+nput line 144.
+(pdftex.def)             Requested size: 140.84258pt x 93.89694pt.
+<img/07_0/N120/Q3_kernel5_stock6_scatter.png, id=915, 433.62pt x 289.08pt>
+File: img/07_0/N120/Q3_kernel5_stock6_scatter.png Graphic file (type png)
+<use img/07_0/N120/Q3_kernel5_stock6_scatter.png>
+Package pdftex.def Info: img/07_0/N120/Q3_kernel5_stock6_scatter.png  used on i
+nput line 147.
+(pdftex.def)             Requested size: 140.84258pt x 93.89694pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--156
+
+ []
+
+[50] [51 <./img/07_0/problem.jpg>] [52 <./img/07_0/modelGPLVM_Qs.png> <./img/07
+_0/intercept_fit_gplvm_120.png>] [53 <./img/07_0/slope_fit_gplvm_120.png>]
+[54 <./img/07_0/noise_GPLVM_120.png> <./img/07_0/std_GPLVM_120.png>] [55 <./img
+/07_0/K_GPLVM_120.png> <./img/07_0/N20/Q3_kernel3_stock1_scatter.png> <./img/07
+_0/N20/Q3_kernel3_stock2_scatter.png> <./img/07_0/N20/Q3_kernel3_stock9_scatter
+.png> <./img/07_0/N60/Q1_kernel1_stock1_scatter.png> <./img/07_0/N60/Q1_kernel1
+_stock2_scatter.png> <./img/07_0/N60/Q1_kernel1_stock3_scatter.png>] [56 <./img
+/07_0/N100/Q1_kernel1_stock1_scatter.png> <./img/07_0/N100/Q1_kernel1_stock2_sc
+atter.png> <./img/07_0/N100/Q1_kernel1_stock3_scatter.png> <./img/07_0/N120/Q1_
+kernel3_stock6_scatter.png> <./img/07_0/N120/Q6_kernel1_stock4_scatter.png> <./
+img/07_0/N120/Q3_kernel5_stock6_scatter.png>]
+<img/07_0/noise_GPLVM_vcr_60.png, id=972, 1445.4pt x 578.16pt>
+File: img/07_0/noise_GPLVM_vcr_60.png Graphic file (type png)
+<use img/07_0/noise_GPLVM_vcr_60.png>
+Package pdftex.def Info: img/07_0/noise_GPLVM_vcr_60.png  used on input line 16
+0.
+(pdftex.def)             Requested size: 505.89pt x 202.3502pt.
+
+Overfull \hbox (36.41951pt too wide) in paragraph at lines 160--161
+ [][] 
+ []
+
+<img/07_0/std_GPLVM_vcr_60.png, id=973, 1445.4pt x 578.16pt>
+File: img/07_0/std_GPLVM_vcr_60.png Graphic file (type png)
+<use img/07_0/std_GPLVM_vcr_60.png>
+Package pdftex.def Info: img/07_0/std_GPLVM_vcr_60.png  used on input line 166.
+
+(pdftex.def)             Requested size: 505.89pt x 202.3502pt.
+
+Overfull \hbox (36.41951pt too wide) in paragraph at lines 166--167
+ [][] 
+ []
+
+<img/07_0/size_influence-gplvm_vcr.png, id=975, 433.62pt x 289.08pt>
+File: img/07_0/size_influence-gplvm_vcr.png Graphic file (type png)
+<use img/07_0/size_influence-gplvm_vcr.png>
+Package pdftex.def Info: img/07_0/size_influence-gplvm_vcr.png  used on input l
+ine 173.
+(pdftex.def)             Requested size: 289.07999pt x 192.72981pt.
+<img/07_0/N60D123/Q1_kernel1_stock2_scatter.png, id=980, 433.62pt x 289.08pt>
+File: img/07_0/N60D123/Q1_kernel1_stock2_scatter.png Graphic file (type png)
+<use img/07_0/N60D123/Q1_kernel1_stock2_scatter.png>
+Package pdftex.def Info: img/07_0/N60D123/Q1_kernel1_stock2_scatter.png  used o
+n input line 183.
+(pdftex.def)             Requested size: 93.89265pt x 62.59209pt.
+<img/07_0/N60D123/Q1_kernel1_stock3_scatter.png, id=981, 433.62pt x 289.08pt>
+File: img/07_0/N60D123/Q1_kernel1_stock3_scatter.png Graphic file (type png)
+<use img/07_0/N60D123/Q1_kernel1_stock3_scatter.png>
+Package pdftex.def Info: img/07_0/N60D123/Q1_kernel1_stock3_scatter.png  used o
+n input line 186.
+(pdftex.def)             Requested size: 140.84258pt x 93.89694pt.
+<img/07_0/N60D123/Q1_kernel1_stock7_scatter.png, id=982, 433.62pt x 289.08pt>
+File: img/07_0/N60D123/Q1_kernel1_stock7_scatter.png Graphic file (type png)
+<use img/07_0/N60D123/Q1_kernel1_stock7_scatter.png>
+Package pdftex.def Info: img/07_0/N60D123/Q1_kernel1_stock7_scatter.png  used o
+n input line 189.
+(pdftex.def)             Requested size: 140.84258pt x 93.89694pt.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 157--6
+
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[57 <./img/07_0/noise_GPLVM_vcr_60.png>] [58 <./img/07_0/std_GPLVM_vcr_60.png> 
+<./img/07_0/size_influence-gplvm_vcr.png>] [59 <./img/07_0/N60D123/Q1_kernel1_s
+tock2_scatter.png> <./img/07_0/N60D123/Q1_kernel1_stock3_scatter.png> <./img/07
+_0/N60D123/Q1_kernel1_stock7_scatter.png>] (07_1_studt.tex
+
+LaTeX Warning: Reference `sec:model_code' on page 60 undefined on input line 2.
+
+
+
+Package caption Warning: \label without proper reference on input line 14.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `tab:splvm_nu' on page 60 undefined on input line 3.
+
+<img/07_1/modelSTUDT_Qs.png, id=1005, 1445.4pt x 722.7pt>
+File: img/07_1/modelSTUDT_Qs.png Graphic file (type png)
+<use img/07_1/modelSTUDT_Qs.png>
+Package pdftex.def Info: img/07_1/modelSTUDT_Qs.png  used on input line 19.
+(pdftex.def)             Requested size: 289.07999pt x 144.53743pt.
+<img/07_1/intercept_fit_studt_120.png, id=1008, 1445.4pt x 578.16pt>
+File: img/07_1/intercept_fit_studt_120.png Graphic file (type png)
+<use img/07_1/intercept_fit_studt_120.png>
+Package pdftex.def Info: img/07_1/intercept_fit_studt_120.png  used on input li
+ne 26.
+(pdftex.def)             Requested size: 505.89pt x 202.3502pt.
+
+Overfull \hbox (36.41951pt too wide) in paragraph at lines 26--27
+ [][] 
+ []
+
+<img/07_1/slope_fit_studt_120.png, id=1009, 1445.4pt x 578.16pt>
+File: img/07_1/slope_fit_studt_120.png Graphic file (type png)
+<use img/07_1/slope_fit_studt_120.png>
+Package pdftex.def Info: img/07_1/slope_fit_studt_120.png  used on input line 3
+2.
+(pdftex.def)             Requested size: 505.89pt x 202.3502pt.
+
+Overfull \hbox (36.41951pt too wide) in paragraph at lines 32--33
+ [][] 
+ []
+
+<img/07_1/noise_STUDT_120.png, id=1013, 1445.4pt x 578.16pt>
+File: img/07_1/noise_STUDT_120.png Graphic file (type png)
+<use img/07_1/noise_STUDT_120.png>
+Package pdftex.def Info: img/07_1/noise_STUDT_120.png  used on input line 39.
+(pdftex.def)             Requested size: 505.89pt x 202.3502pt.
+
+Overfull \hbox (36.41951pt too wide) in paragraph at lines 39--40
+ [][] 
+ []
+
+<img/07_1/std_STUDT_120.png, id=1014, 1445.4pt x 578.16pt>
+File: img/07_1/std_STUDT_120.png Graphic file (type png)
+<use img/07_1/std_STUDT_120.png>
+Package pdftex.def Info: img/07_1/std_STUDT_120.png  used on input line 45.
+(pdftex.def)             Requested size: 505.89pt x 202.3502pt.
+
+Overfull \hbox (36.41951pt too wide) in paragraph at lines 45--46
+ [][] 
+ []
+
+<img/07_1/N20/Q1_kernel1_stock1_scatter.png, id=1019, 433.62pt x 289.08pt>
+File: img/07_1/N20/Q1_kernel1_stock1_scatter.png Graphic file (type png)
+<use img/07_1/N20/Q1_kernel1_stock1_scatter.png>
+Package pdftex.def Info: img/07_1/N20/Q1_kernel1_stock1_scatter.png  used on in
+put line 53.
+(pdftex.def)             Requested size: 140.84258pt x 93.89694pt.
+<img/07_1/N20/Q1_kernel1_stock2_scatter.png, id=1020, 433.62pt x 289.08pt>
+File: img/07_1/N20/Q1_kernel1_stock2_scatter.png Graphic file (type png)
+<use img/07_1/N20/Q1_kernel1_stock2_scatter.png>
+Package pdftex.def Info: img/07_1/N20/Q1_kernel1_stock2_scatter.png  used on in
+put line 56.
+(pdftex.def)             Requested size: 140.84258pt x 93.89694pt.
+<img/07_1/N20/Q1_kernel1_stock8_scatter.png, id=1021, 433.62pt x 289.08pt>
+File: img/07_1/N20/Q1_kernel1_stock8_scatter.png Graphic file (type png)
+<use img/07_1/N20/Q1_kernel1_stock8_scatter.png>
+Package pdftex.def Info: img/07_1/N20/Q1_kernel1_stock8_scatter.png  used on in
+put line 59.
+(pdftex.def)             Requested size: 140.84258pt x 93.89694pt.
+<img/07_1/N60/Q1_kernel1_stock1_scatter.png, id=1022, 433.62pt x 289.08pt>
+File: img/07_1/N60/Q1_kernel1_stock1_scatter.png Graphic file (type png)
+<use img/07_1/N60/Q1_kernel1_stock1_scatter.png>
+Package pdftex.def Info: img/07_1/N60/Q1_kernel1_stock1_scatter.png  used on in
+put line 67.
+(pdftex.def)             Requested size: 140.84258pt x 93.89694pt.
+<img/07_1/N60/Q1_kernel1_stock4_scatter.png, id=1023, 433.62pt x 289.08pt>
+File: img/07_1/N60/Q1_kernel1_stock4_scatter.png Graphic file (type png)
+<use img/07_1/N60/Q1_kernel1_stock4_scatter.png>
+Package pdftex.def Info: img/07_1/N60/Q1_kernel1_stock4_scatter.png  used on in
+put line 70.
+(pdftex.def)             Requested size: 140.84258pt x 93.89694pt.
+<img/07_1/N60/Q1_kernel1_stock9_scatter.png, id=1024, 433.62pt x 289.08pt>
+File: img/07_1/N60/Q1_kernel1_stock9_scatter.png Graphic file (type png)
+<use img/07_1/N60/Q1_kernel1_stock9_scatter.png>
+Package pdftex.def Info: img/07_1/N60/Q1_kernel1_stock9_scatter.png  used on in
+put line 73.
+(pdftex.def)             Requested size: 140.84258pt x 93.89694pt.
+<img/07_1/N100/Q1_kernel1_stock1_scatter.png, id=1025, 433.62pt x 289.08pt>
+File: img/07_1/N100/Q1_kernel1_stock1_scatter.png Graphic file (type png)
+<use img/07_1/N100/Q1_kernel1_stock1_scatter.png>
+Package pdftex.def Info: img/07_1/N100/Q1_kernel1_stock1_scatter.png  used on i
+nput line 81.
+(pdftex.def)             Requested size: 140.84258pt x 93.89694pt.
+<img/07_1/N100/Q1_kernel1_stock2_scatter.png, id=1026, 433.62pt x 289.08pt>
+File: img/07_1/N100/Q1_kernel1_stock2_scatter.png Graphic file (type png)
+<use img/07_1/N100/Q1_kernel1_stock2_scatter.png>
+Package pdftex.def Info: img/07_1/N100/Q1_kernel1_stock2_scatter.png  used on i
+nput line 84.
+(pdftex.def)             Requested size: 140.84258pt x 93.89694pt.
+<img/07_1/N100/Q1_kernel1_stock3_scatter.png, id=1027, 433.62pt x 289.08pt>
+File: img/07_1/N100/Q1_kernel1_stock3_scatter.png Graphic file (type png)
+<use img/07_1/N100/Q1_kernel1_stock3_scatter.png>
+Package pdftex.def Info: img/07_1/N100/Q1_kernel1_stock3_scatter.png  used on i
+nput line 87.
+(pdftex.def)             Requested size: 140.84258pt x 93.89694pt.
+<img/07_1/N120/Q1_kernel1_stock1_scatter.png, id=1028, 433.62pt x 289.08pt>
+File: img/07_1/N120/Q1_kernel1_stock1_scatter.png Graphic file (type png)
+<use img/07_1/N120/Q1_kernel1_stock1_scatter.png>
+Package pdftex.def Info: img/07_1/N120/Q1_kernel1_stock1_scatter.png  used on i
+nput line 95.
+(pdftex.def)             Requested size: 140.84258pt x 93.89694pt.
+<img/07_1/N120/Q1_kernel1_stock4_scatter.png, id=1029, 433.62pt x 289.08pt>
+File: img/07_1/N120/Q1_kernel1_stock4_scatter.png Graphic file (type png)
+<use img/07_1/N120/Q1_kernel1_stock4_scatter.png>
+Package pdftex.def Info: img/07_1/N120/Q1_kernel1_stock4_scatter.png  used on i
+nput line 98.
+(pdftex.def)             Requested size: 140.84258pt x 93.89694pt.
+<img/07_1/N120/Q1_kernel1_stock5_scatter.png, id=1030, 433.62pt x 289.08pt>
+File: img/07_1/N120/Q1_kernel1_stock5_scatter.png Graphic file (type png)
+<use img/07_1/N120/Q1_kernel1_stock5_scatter.png>
+Package pdftex.def Info: img/07_1/N120/Q1_kernel1_stock5_scatter.png  used on i
+nput line 101.
+(pdftex.def)             Requested size: 140.84258pt x 93.89694pt.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 1--11
+
+ []
+
+[60
+
+
+] [61 <./img/07_1/modelSTUDT_Qs.png> <./img/07_1/intercept_fit_studt_120.png>] 
+[62 <./img/07_1/slope_fit_studt_120.png> <./img/07_1/noise_STUDT_120.png>]
+[63 <./img/07_1/std_STUDT_120.png> <./img/07_1/N20/Q1_kernel1_stock1_scatter.pn
+g> <./img/07_1/N20/Q1_kernel1_stock2_scatter.png> <./img/07_1/N20/Q1_kernel1_st
+ock8_scatter.png>] [64 <./img/07_1/N60/Q1_kernel1_stock1_scatter.png> <./img/07
+_1/N60/Q1_kernel1_stock4_scatter.png> <./img/07_1/N60/Q1_kernel1_stock9_scatter
+.png> <./img/07_1/N100/Q1_kernel1_stock1_scatter.png> <./img/07_1/N100/Q1_kerne
+l1_stock2_scatter.png> <./img/07_1/N100/Q1_kernel1_stock3_scatter.png> <./img/0
+7_1/N120/Q1_kernel1_stock1_scatter.png> <./img/07_1/N120/Q1_kernel1_stock4_scat
+ter.png> <./img/07_1/N120/Q1_kernel1_stock5_scatter.png>] (07_2_vola.tex
+
+LaTeX Warning: Reference `sec:model_code' on page 65 undefined on input line 1.
+
+
+<img/07_2/noise_VOLA_elbo.png, id=1076, 1445.4pt x 578.16pt>
+File: img/07_2/noise_VOLA_elbo.png Graphic file (type png)
+<use img/07_2/noise_VOLA_elbo.png>
+Package pdftex.def Info: img/07_2/noise_VOLA_elbo.png  used on input line 9.
+(pdftex.def)             Requested size: 505.89pt x 202.3502pt.
+
+Overfull \hbox (36.41951pt too wide) in paragraph at lines 9--10
+ [][] 
+ []
+
+<img/07_2/Sigma_VOLA_elbo.png, id=1077, 1445.4pt x 578.16pt>
+File: img/07_2/Sigma_VOLA_elbo.png Graphic file (type png)
+<use img/07_2/Sigma_VOLA_elbo.png>
+Package pdftex.def Info: img/07_2/Sigma_VOLA_elbo.png  used on input line 15.
+(pdftex.def)             Requested size: 505.89pt x 202.3502pt.
+
+Overfull \hbox (36.41951pt too wide) in paragraph at lines 15--16
+ [][] 
+ []
+
+<img/07_2/modelVOLA_Qs.png, id=1078, 1445.4pt x 722.7pt>
+File: img/07_2/modelVOLA_Qs.png Graphic file (type png)
+<use img/07_2/modelVOLA_Qs.png>
+Package pdftex.def Info: img/07_2/modelVOLA_Qs.png  used on input line 21.
+(pdftex.def)             Requested size: 505.89pt x 252.93776pt.
+
+Overfull \hbox (36.41951pt too wide) in paragraph at lines 21--22
+ [][] 
+ []
+
+<img/07_2/elbo/Q1_kernel1_stock1_scatter.png, id=1080, 433.62pt x 289.08pt>
+File: img/07_2/elbo/Q1_kernel1_stock1_scatter.png Graphic file (type png)
+<use img/07_2/elbo/Q1_kernel1_stock1_scatter.png>
+Package pdftex.def Info: img/07_2/elbo/Q1_kernel1_stock1_scatter.png  used on i
+nput line 29.
+(pdftex.def)             Requested size: 140.84258pt x 93.89694pt.
+<img/07_2/elbo/Q1_kernel1_stock9_scatter.png, id=1081, 433.62pt x 289.08pt>
+File: img/07_2/elbo/Q1_kernel1_stock9_scatter.png Graphic file (type png)
+<use img/07_2/elbo/Q1_kernel1_stock9_scatter.png>
+Package pdftex.def Info: img/07_2/elbo/Q1_kernel1_stock9_scatter.png  used on i
+nput line 32.
+(pdftex.def)             Requested size: 140.84258pt x 93.89694pt.
+<img/07_2/elbo/Q1_kernel1_stock2_scatter.png, id=1082, 433.62pt x 289.08pt>
+File: img/07_2/elbo/Q1_kernel1_stock2_scatter.png Graphic file (type png)
+<use img/07_2/elbo/Q1_kernel1_stock2_scatter.png>
+Package pdftex.def Info: img/07_2/elbo/Q1_kernel1_stock2_scatter.png  used on i
+nput line 35.
+(pdftex.def)             Requested size: 140.84258pt x 93.89694pt.
+<img/07_2/slope_fit_vola_elbo.png, id=1085, 1445.4pt x 578.16pt>
+File: img/07_2/slope_fit_vola_elbo.png Graphic file (type png)
+<use img/07_2/slope_fit_vola_elbo.png>
+Package pdftex.def Info: img/07_2/slope_fit_vola_elbo.png  used on input line 4
+3.
+(pdftex.def)             Requested size: 505.89pt x 202.3502pt.
+
+Overfull \hbox (36.41951pt too wide) in paragraph at lines 43--44
+ [][] 
+ []
+
+<img/07_2/intercept_fit_vola_elbo.png, id=1086, 1445.4pt x 578.16pt>
+File: img/07_2/intercept_fit_vola_elbo.png Graphic file (type png)
+<use img/07_2/intercept_fit_vola_elbo.png>
+Package pdftex.def Info: img/07_2/intercept_fit_vola_elbo.png  used on input li
+ne 49.
+(pdftex.def)             Requested size: 505.89pt x 202.3502pt.
+
+Overfull \hbox (36.41951pt too wide) in paragraph at lines 49--50
+ [][] 
+ []
+
+) [65
+
+
+] [66 <./img/07_2/noise_VOLA_elbo.png> <./img/07_2/Sigma_VOLA_elbo.png>]
+[67 <./img/07_2/modelVOLA_Qs.png> <./img/07_2/elbo/Q1_kernel1_stock1_scatter.pn
+g> <./img/07_2/elbo/Q1_kernel1_stock9_scatter.png> <./img/07_2/elbo/Q1_kernel1_
+stock2_scatter.png>] [68 <./img/07_2/slope_fit_vola_elbo.png> <./img/07_2/inter
+cept_fit_vola_elbo.png>] (07_3_time.tex
+<img/07_3/noise_time_elbo.png, id=1113, 1445.4pt x 578.16pt>
+File: img/07_3/noise_time_elbo.png Graphic file (type png)
+<use img/07_3/noise_time_elbo.png>
+Package pdftex.def Info: img/07_3/noise_time_elbo.png  used on input line 4.
+(pdftex.def)             Requested size: 505.89pt x 202.3502pt.
+
+Overfull \hbox (36.41951pt too wide) in paragraph at lines 4--5
+ [][] 
+ []
+
+<img/07_3/std_time_elbo.png, id=1114, 1445.4pt x 578.16pt>
+File: img/07_3/std_time_elbo.png Graphic file (type png)
+<use img/07_3/std_time_elbo.png>
+Package pdftex.def Info: img/07_3/std_time_elbo.png  used on input line 10.
+(pdftex.def)             Requested size: 505.89pt x 202.3502pt.
+
+Overfull \hbox (36.41951pt too wide) in paragraph at lines 10--11
+ [][] 
+ []
+
+<img/07_3/K_time_elbo.png, id=1115, 1445.4pt x 578.16pt>
+File: img/07_3/K_time_elbo.png Graphic file (type png)
+<use img/07_3/K_time_elbo.png>
+Package pdftex.def Info: img/07_3/K_time_elbo.png  used on input line 16.
+(pdftex.def)             Requested size: 505.89pt x 202.3502pt.
+
+Overfull \hbox (36.41951pt too wide) in paragraph at lines 16--17
+ [][] 
+ []
+
+<img/07_3/modelTIME_Qs.png, id=1119, 1445.4pt x 722.7pt>
+File: img/07_3/modelTIME_Qs.png Graphic file (type png)
+<use img/07_3/modelTIME_Qs.png>
+Package pdftex.def Info: img/07_3/modelTIME_Qs.png  used on input line 23.
+(pdftex.def)             Requested size: 505.89pt x 252.93776pt.
+
+Overfull \hbox (36.41951pt too wide) in paragraph at lines 23--24
+ [][] 
+ []
+
+<img/07_3/slope_fit_time_elbo.png, id=1121, 1445.4pt x 578.16pt>
+File: img/07_3/slope_fit_time_elbo.png Graphic file (type png)
+<use img/07_3/slope_fit_time_elbo.png>
+Package pdftex.def Info: img/07_3/slope_fit_time_elbo.png  used on input line 3
+0.
+(pdftex.def)             Requested size: 505.89pt x 202.3502pt.
+
+Overfull \hbox (36.41951pt too wide) in paragraph at lines 30--31
+ [][] 
+ []
+
+<img/07_3/intercept_fit_time_elbo.png, id=1122, 1445.4pt x 578.16pt>
+File: img/07_3/intercept_fit_time_elbo.png Graphic file (type png)
+<use img/07_3/intercept_fit_time_elbo.png>
+Package pdftex.def Info: img/07_3/intercept_fit_time_elbo.png  used on input li
+ne 36.
+(pdftex.def)             Requested size: 505.89pt x 202.3502pt.
+
+Overfull \hbox (36.41951pt too wide) in paragraph at lines 36--37
+ [][] 
+ []
+
+<img/07_3/Q1_kernel1_stock1_scatter.png, id=1125, 433.62pt x 289.08pt>
+File: img/07_3/Q1_kernel1_stock1_scatter.png Graphic file (type png)
+<use img/07_3/Q1_kernel1_stock1_scatter.png>
+Package pdftex.def Info: img/07_3/Q1_kernel1_stock1_scatter.png  used on input 
+line 44.
+(pdftex.def)             Requested size: 140.84258pt x 93.89694pt.
+<img/07_3/Q1_kernel1_stock2_scatter.png, id=1126, 433.62pt x 289.08pt>
+File: img/07_3/Q1_kernel1_stock2_scatter.png Graphic file (type png)
+<use img/07_3/Q1_kernel1_stock2_scatter.png>
+Package pdftex.def Info: img/07_3/Q1_kernel1_stock2_scatter.png  used on input 
+line 47.
+(pdftex.def)             Requested size: 140.84258pt x 93.89694pt.
+<img/07_3/Q2_kernel1_stock4_scatter.png, id=1127, 433.62pt x 289.08pt>
+File: img/07_3/Q2_kernel1_stock4_scatter.png Graphic file (type png)
+<use img/07_3/Q2_kernel1_stock4_scatter.png>
+Package pdftex.def Info: img/07_3/Q2_kernel1_stock4_scatter.png  used on input 
+line 50.
+(pdftex.def)             Requested size: 140.84258pt x 93.89694pt.
+)
+Overfull \hbox (5.13138pt too wide) in paragraph at lines 1--21
+\T1/lmr/m/n/12 The Time-dependent La-tent Space GPLVM model al-lows the GPLVM e
+x-tra flex-i-bil-ity through
+ []
+
+[69
+
+
+] [70 <./img/07_3/noise_time_elbo.png> <./img/07_3/std_time_elbo.png>]
+[71 <./img/07_3/K_time_elbo.png> <./img/07_3/modelTIME_Qs.png>] [72 <./img/07_3
+/slope_fit_time_elbo.png> <./img/07_3/intercept_fit_time_elbo.png> <./img/07_3/
+Q1_kernel1_stock1_scatter.png> <./img/07_3/Q1_kernel1_stock2_scatter.png> <./im
+g/07_3/Q2_kernel1_stock4_scatter.png>] (07_4_time-t.tex
+<img/07_4/noise_timet_elbo.png, id=1154, 1445.4pt x 578.16pt>
+File: img/07_4/noise_timet_elbo.png Graphic file (type png)
+<use img/07_4/noise_timet_elbo.png>
+Package pdftex.def Info: img/07_4/noise_timet_elbo.png  used on input line 4.
+(pdftex.def)             Requested size: 505.89pt x 202.3502pt.
+
+Overfull \hbox (36.41951pt too wide) in paragraph at lines 4--5
+ [][] 
+ []
+
+<img/07_4/std_timet_elbo.png, id=1157, 1445.4pt x 578.16pt>
+File: img/07_4/std_timet_elbo.png Graphic file (type png)
+<use img/07_4/std_timet_elbo.png>
+Package pdftex.def Info: img/07_4/std_timet_elbo.png  used on input line 11.
+(pdftex.def)             Requested size: 505.89pt x 202.3502pt.
+
+Overfull \hbox (36.41951pt too wide) in paragraph at lines 11--12
+ [][] 
+ []
+
+<img/07_4/K_timet_elbo.png, id=1158, 1445.4pt x 578.16pt>
+File: img/07_4/K_timet_elbo.png Graphic file (type png)
+<use img/07_4/K_timet_elbo.png>
+Package pdftex.def Info: img/07_4/K_timet_elbo.png  used on input line 17.
+(pdftex.def)             Requested size: 505.89pt x 202.3502pt.
+
+Overfull \hbox (36.41951pt too wide) in paragraph at lines 17--18
+ [][] 
+ []
+
+<img/07_4/modelTIMET_Qs.png, id=1159, 1445.4pt x 722.7pt>
+File: img/07_4/modelTIMET_Qs.png Graphic file (type png)
+<use img/07_4/modelTIMET_Qs.png>
+Package pdftex.def Info: img/07_4/modelTIMET_Qs.png  used on input line 24.
+(pdftex.def)             Requested size: 505.89pt x 252.93776pt.
+
+Overfull \hbox (36.41951pt too wide) in paragraph at lines 24--25
+ [][] 
+ []
+
+<img/07_4/slope_fit_timet_elbo.png, id=1160, 1445.4pt x 578.16pt>
+File: img/07_4/slope_fit_timet_elbo.png Graphic file (type png)
+<use img/07_4/slope_fit_timet_elbo.png>
+Package pdftex.def Info: img/07_4/slope_fit_timet_elbo.png  used on input line 
+31.
+(pdftex.def)             Requested size: 505.89pt x 202.3502pt.
+
+Overfull \hbox (36.41951pt too wide) in paragraph at lines 31--32
+ [][] 
+ []
+
+<img/07_4/intercept_fit_timet_elbo.png, id=1161, 1445.4pt x 578.16pt>
+File: img/07_4/intercept_fit_timet_elbo.png Graphic file (type png)
+<use img/07_4/intercept_fit_timet_elbo.png>
+Package pdftex.def Info: img/07_4/intercept_fit_timet_elbo.png  used on input l
+ine 37.
+(pdftex.def)             Requested size: 505.89pt x 202.3502pt.
+
+Overfull \hbox (36.41951pt too wide) in paragraph at lines 37--38
+ [][] 
+ []
+
+<img/07_4/timet_elbo/Q1_kernel1_stock1_scatter.png, id=1163, 433.62pt x 289.08p
+t>
+File: img/07_4/timet_elbo/Q1_kernel1_stock1_scatter.png Graphic file (type png)
+
+<use img/07_4/timet_elbo/Q1_kernel1_stock1_scatter.png>
+Package pdftex.def Info: img/07_4/timet_elbo/Q1_kernel1_stock1_scatter.png  use
+d on input line 45.
+(pdftex.def)             Requested size: 140.84258pt x 93.89694pt.
+<img/07_4/timet_elbo/Q1_kernel1_stock6_scatter.png, id=1164, 433.62pt x 289.08p
+t>
+File: img/07_4/timet_elbo/Q1_kernel1_stock6_scatter.png Graphic file (type png)
+
+<use img/07_4/timet_elbo/Q1_kernel1_stock6_scatter.png>
+Package pdftex.def Info: img/07_4/timet_elbo/Q1_kernel1_stock6_scatter.png  use
+d on input line 48.
+(pdftex.def)             Requested size: 140.84258pt x 93.89694pt.
+<img/07_4/timet_elbo/Q4_kernel2_stock8_scatter.png, id=1165, 433.62pt x 289.08p
+t>
+File: img/07_4/timet_elbo/Q4_kernel2_stock8_scatter.png Graphic file (type png)
+
+<use img/07_4/timet_elbo/Q4_kernel2_stock8_scatter.png>
+Package pdftex.def Info: img/07_4/timet_elbo/Q4_kernel2_stock8_scatter.png  use
+d on input line 51.
+(pdftex.def)             Requested size: 140.84258pt x 93.89694pt.
+) [73
+
+
+] [74 <./img/07_4/noise_timet_elbo.png> <./img/07_4/std_timet_elbo.png>]
+[75 <./img/07_4/K_timet_elbo.png> <./img/07_4/modelTIMET_Qs.png>] [76 <./img/07
+_4/slope_fit_timet_elbo.png> <./img/07_4/intercept_fit_timet_elbo.png> <./img/0
+7_4/timet_elbo/Q1_kernel1_stock1_scatter.png> <./img/07_4/timet_elbo/Q1_kernel1
+_stock6_scatter.png> <./img/07_4/timet_elbo/Q4_kernel2_stock8_scatter.png>])
+\openout2 = `08_discussion.aux'.
+
+
+(08_discussion.tex
+chapter 5.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 2--122
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--122
+
+ []
+
+[77
+
+
+
+
+
+] [78]
+\openout2 = `09_appendices.aux'.
+
+ (09_appendices.tex
+chapter 6.
+(09_1_Appendix_A.tex
+
+Package caption Warning: \label without proper reference on input line 3.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:huber_stock_plots' on page 79 undefined on input 
+line 1.
+
+<img/AA/comparison_huber_linear.png, id=1216, 1084.05pt x 1228.59pt>
+File: img/AA/comparison_huber_linear.png Graphic file (type png)
+<use img/AA/comparison_huber_linear.png>
+Package pdftex.def Info: img/AA/comparison_huber_linear.png  used on input line
+ 5.
+(pdftex.def)             Requested size: 289.07999pt x 327.6182pt.
+<img/AA/lin_reg.png, id=1219, 433.62pt x 289.08pt>
+File: img/AA/lin_reg.png Graphic file (type png)
+<use img/AA/lin_reg.png>
+Package pdftex.def Info: img/AA/lin_reg.png  used on input line 13.
+(pdftex.def)             Requested size: 211.26028pt x 140.84322pt.
+<img/AA/hub_reg.png, id=1220, 433.62pt x 289.08pt>
+File: img/AA/hub_reg.png Graphic file (type png)
+<use img/AA/hub_reg.png>
+Package pdftex.def Info: img/AA/hub_reg.png  used on input line 18.
+(pdftex.def)             Requested size: 211.26028pt x 140.84322pt.
+)
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[79
+
+
+
+] [80 <./img/AA/comparison_huber_linear.png>] [81 <./img/AA/lin_reg.png> <./img
+/AA/hub_reg.png>] (09_2_Appendix_C.tex
+Overfull \hbox (10.12552pt too wide) in paragraph at lines 42--43
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+] 
+ []
+
+[82
+
+
+] [83] [84
+
+
+] [85] [86
+
+
+]
+Overfull \hbox (18.92545pt too wide) in paragraph at lines 413--414
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][] 
+ []
+
+[87]
+Overfull \hbox (62.92508pt too wide) in paragraph at lines 512--513
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+] 
+ []
+
+
+Overfull \hbox (45.32523pt too wide) in paragraph at lines 521--522
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+] 
+ []
+
+[88] [89
+
+
+] [90] [91
+
+
+]
+Overfull \hbox (18.92545pt too wide) in paragraph at lines 781--782
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][] 
+ []
+
+[92]
+Overfull \hbox (58.52512pt too wide) in paragraph at lines 876--877
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+] 
+ []
+
+[93])) ("00_Vorlage Abschlussarbeit.bbl"
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
+5.
+
+("C:\Users\Jesse\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\t1lmtt.fd"
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+[94
+
+
+
+\newlabel{sec:model_code}{{6.2.5}{94}{gplvm\_time-studt.stan}{lstnumber.-7.218}
+{}}
+
+
+
+
+] [95] [96]) [97]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 131.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 131.
+ ("00_Vorlage Abschlussarbeit.aux" (01_title.aux)
+(02_acknowledgements.aux) (03_abstract.aux) (04_introduction.aux)
+(05_basics.aux) (06_methods.aux) (07_results.aux) (08_discussion.aux)
+(09_appendices.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 131.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 131.
+Package rerunfilecheck Info: File `"00_Vorlage Abschlussarbeit".out' has not ch
+anged.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 131.
+ ) 
+Here is how much of TeX's memory you used:
+ 36453 strings out of 480930
+ 842075 string characters out of 2899761
+ 1325021 words of memory out of 3000000
+ 50093 multiletter control sequences out of 15000+200000
+ 625583 words of font info for 86 fonts, out of 3000000 for 9000
+ 1142 hyphenation exceptions out of 8191
+ 64i,14n,103p,10186b,1790s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/Jesse/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.en
+c}{C:/Users/Jesse/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.en
+c}{C:/Users/Jesse/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathi
+t.enc}{C:/Users/Jesse/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-t
+s1.enc}{C:/Users/Jesse/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-
+mathsy.enc} <C:\Users\Jesse\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/public/bbo
+ld/dpi600\bbold12.pk>{C:/Users/Jesse/AppData/Local/Programs/MiKTeX 2.9/fonts/en
+c/dvips/lm/lm-mathex.enc}<C:/Users/Jesse/AppData/Local/Programs/MiKTeX 2.9/font
+s/type1/public/lm/lmbsy10.pfb><C:/Users/Jesse/AppData/Local/Programs/MiKTeX 2.9
+/fonts/type1/public/lm/lmbsy7.pfb><C:/Users/Jesse/AppData/Local/Programs/MiKTeX
+ 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Jesse/AppData/Local/Programs/Mi
+KTeX 2.9/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/Jesse/AppData/Local/Progra
+ms/MiKTeX 2.9/fonts/type1/public/lm/lmex10.pfb><C:/Users/Jesse/AppData/Local/Pr
+ograms/MiKTeX 2.9/fonts/type1/public/lm/lmmi10.pfb><C:/Users/Jesse/AppData/Loca
+l/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi12.pfb><C:/Users/Jesse/AppData/
+Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi6.pfb><C:/Users/Jesse/AppDa
+ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Jesse/Ap
+pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmib10.pfb><C:/Users/Jes
+se/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmmib7.pfb><C:/Users
+/Jesse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Us
+ers/Jesse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:
+/Users/Jesse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr6.pfb><
+C:/Users/Jesse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb
+><C:/Users/Jesse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmri12
+.pfb><C:/Users/Jesse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lm
+ro12.pfb><C:/Users/Jesse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/l
+m/lmssbx10.pfb><C:/Users/Jesse/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
+blic/lm/lmsy10.pfb><C:/Users/Jesse/AppData/Local/Programs/MiKTeX 2.9/fonts/type
+1/public/lm/lmsy6.pfb><C:/Users/Jesse/AppData/Local/Programs/MiKTeX 2.9/fonts/t
+ype1/public/lm/lmsy8.pfb><C:/Users/Jesse/AppData/Local/Programs/MiKTeX 2.9/font
+s/type1/public/lm/lmtt12.pfb><C:/Users/Jesse/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/Jesse/AppData/Local/Pr
+ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on "00_Vorlage Abschlussarbeit.pdf" (97 pages, 5543397 bytes).
+PDF statistics:
+ 2708 PDF objects out of 2984 (max. 8388607)
+ 1398 named destinations out of 1440 (max. 500000)
+ 782 words of extra memory for PDF output out of 10000 (max. 10000000)
+

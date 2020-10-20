@@ -1,0 +1,58 @@
+\babel@toc {english}{}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Fair Coinflip}}{17}{figure.caption.8}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Fair and unfair coinflip comparison}}{18}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces GP prior samples}}{25}{figure.caption.12}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Random data from sine function with Gaussian noise}}{26}{figure.caption.13}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Trained GP samples with covariance interval}}{26}{figure.caption.14}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Trained GP with covariance intervals}}{26}{figure.caption.14}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Lengthscale influence on samples}}{29}{figure.caption.15}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces GP samples example}}{33}{figure.caption.16}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces TP samples example}}{33}{figure.caption.16}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Metropolis Hastings Convergence Example}}{35}{figure.caption.17}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Overview of the program sequence.}}{44}{figure.caption.20}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces \relax }}{49}{figure.caption.21}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Data-Prediction Plot GPLVM}}{51}{figure.caption.22}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces ELBO and $R^2$ comparison for the GPLVM model}}{52}{figure.caption.23}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Intercept Distributions for GPLVM}}{52}{figure.caption.24}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Slope distributions for GPLVM}}{53}{figure.caption.25}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Signal Noise distributions GPLVM}}{54}{figure.caption.26}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Standard Deviation Distributions GPLVM}}{54}{figure.caption.27}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Covariance Matrix Entry Distributions GPLVM}}{55}{figure.caption.28}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Y-$\hat {Y}$ pair plots for N=20 with the GPLVM model}}{55}{figure.caption.29}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Y-$\hat {Y}$ pair plots for N=60 with the GPLVM model}}{55}{figure.caption.30}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Y-$\hat {Y}$ pair plots for N=100 with the GPLVM model}}{56}{figure.caption.31}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Y-$\hat {Y}$ pair plots for N=120 with the GPLVM model}}{56}{figure.caption.32}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Noise Distribution of GPLVM with VCR dataset}}{57}{figure.caption.33}%
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Variance Distributions of GPLVM with VN dataset}}{58}{figure.caption.34}%
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Initialization of GPLVM model VN datasets}}{58}{figure.caption.35}%
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Y-$\hat {Y}$ pair plots for $N=60$, $D=125$ VN-data with the GPLVM model}}{59}{figure.caption.36}%
+\contentsline {figure}{\numberline {4.17}{\ignorespaces SPLVM ELBO and $R^2$ values for the $N=120$, $D=754$ dataset.}}{61}{figure.caption.38}%
+\contentsline {figure}{\numberline {4.18}{\ignorespaces SPLVM intercept values for $N=120$, $D=754$}}{61}{figure.caption.39}%
+\contentsline {figure}{\numberline {4.19}{\ignorespaces SPLVM slope values for $N=120$, $D=754$}}{62}{figure.caption.40}%
+\contentsline {figure}{\numberline {4.20}{\ignorespaces SPLVM noise values for $N=120$, $D=754$}}{62}{figure.caption.41}%
+\contentsline {figure}{\numberline {4.21}{\ignorespaces SPLVM variance values for $N=120$, $D=754$}}{63}{figure.caption.42}%
+\contentsline {figure}{\numberline {4.22}{\ignorespaces Y-$\hat {Y}$ pair plots for N=20 with the SPLVM model}}{63}{figure.caption.43}%
+\contentsline {figure}{\numberline {4.23}{\ignorespaces Y-$\hat {Y}$ pair plots for N=60 with the SPLVM model}}{64}{figure.caption.44}%
+\contentsline {figure}{\numberline {4.24}{\ignorespaces Y-$\hat {Y}$ pair plots for N=100 with the SPLVM model}}{64}{figure.caption.45}%
+\contentsline {figure}{\numberline {4.25}{\ignorespaces Y-$\hat {Y}$ pair plots for N=120 with the SPLVM model}}{64}{figure.caption.46}%
+\contentsline {figure}{\numberline {4.26}{\ignorespaces V-GPLVM noise distributions}}{66}{figure.caption.47}%
+\contentsline {figure}{\numberline {4.27}{\ignorespaces V-GPLVM Variance distributions}}{66}{figure.caption.48}%
+\contentsline {figure}{\numberline {4.28}{\ignorespaces V-GPLVM ELBO and $R^2$ model results}}{67}{figure.caption.49}%
+\contentsline {figure}{\numberline {4.29}{\ignorespaces Y-$\hat {Y}$ pair plots V-GPLVM model}}{67}{figure.caption.50}%
+\contentsline {figure}{\numberline {4.30}{\ignorespaces V-GPLVM slopes distributions}}{68}{figure.caption.51}%
+\contentsline {figure}{\numberline {4.31}{\ignorespaces V-GPLVM intercepts distributions}}{68}{figure.caption.52}%
+\contentsline {figure}{\numberline {4.32}{\ignorespaces T-GPLVM noise distributions}}{70}{figure.caption.53}%
+\contentsline {figure}{\numberline {4.33}{\ignorespaces T-GPLVM variance distributions}}{70}{figure.caption.54}%
+\contentsline {figure}{\numberline {4.34}{\ignorespaces T-GPLVM covariance matrix entries distributions}}{71}{figure.caption.55}%
+\contentsline {figure}{\numberline {4.35}{\ignorespaces T-GPLVM ELBO and $R^2$ results}}{71}{figure.caption.56}%
+\contentsline {figure}{\numberline {4.36}{\ignorespaces T-GPLVM slope distributions}}{72}{figure.caption.57}%
+\contentsline {figure}{\numberline {4.37}{\ignorespaces T-GPLVM intercept distributions}}{72}{figure.caption.58}%
+\contentsline {figure}{\numberline {4.38}{\ignorespaces Y-$\hat {Y}$ pair plots for N=10 with the T-GPLVM model}}{72}{figure.caption.59}%
+\contentsline {figure}{\numberline {4.45}{\ignorespaces Y-$\hat {Y}$ pair plots for N=10 with the T-SPLVM model}}{76}{figure.caption.66}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Comparison Huber Regression on pair plots}}{80}{figure.caption.67}%

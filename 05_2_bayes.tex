@@ -1,0 +1,71 @@
+Models using the bayesian framework of statistics rely on conditional probability. These probabilities are conditioned on previous assumptions about the general environment. This can be surroundings, game states, environmental variables, etc. Since the properties of complex systems are majorly influenced by these traits, incorporating them into the model is of utmost importance. The general case of Bayes rule combines prior knowledge of the model, called a prior probability, with the observed evidence and its likelihood to form the posterior probability. The posterior probability can be interpreted as the probability of observing a certain set of observations dependent on the likelihood of the observations, given the model. 
+\begin{equation}%Bayes Rule
+	P(A|B) = \frac{P(B|A) P(A)}{P(B)}
+\label{Bayes Rule for probabilities. }
+\end{equation}
+Here, A is the proposition and B the evidence, and we try to get the posterior $P(A|B)$, the degree of belief in $A$ if we have accounted $B$ to be true. $P(A)$ is the prior, the initial belief in $A$, while $P(B)$ is the likelihood of the evidence being true. This rule currently applies only to probabilities, but it can just as well be scaled up to probability distributions.
+\begin{equation}%Bayes rule distributions
+	p(A|B) = \frac{p(B|A) p(A)}{p(B)}
+\label{Bayes Rule for probability distributions. }
+\end{equation}
+Probability distributions, which are factors defining models, can be tested for reliability via Bayes rule too. Also using Bayes rule, we can test our model assumptions and compare models. 
+\begin{equation}%Bayes Rule Models and Data
+	p(M|D,I) = \frac{p(D|M,I) p(M|I)}{p(D|I)}
+\label{Bayes Rule for Model Comparison}
+\end{equation}
+Here, $M$ is the model in question, while $D$ is the observed Data, and $I$ is the previously known information of the system. We can then formulate a hierarchical Bayesian workflow.
+\begin{enumerate}%Bayesian Workflow
+	\item Use Bayes Rule to construct a naive model using only prior knowledge
+	\item Update knowledge inside naive model 
+	\item Create more complex model using Bayes rule for models
+	\item Update knowledge about complex model
+	\item repeat steps 1-4 until KL-Divergence converges to 0.
+\end{enumerate}
+%When we maximize the likelihood trough the Maximum Likelihood Method, we can approximate the true parameters through the model parameters. [xxx]
+Every bit of knowledge we have about the system is now encoded in probability distributions, but to calculate this workflow, we need some class of probability distributions, that is sensible to use in most models, and which can preferrably be solved analytically. In experiments, we will see that this workflow is not as easy as expected, since the evidence is often intractable (xxx look up from VB Wikipedia), which then can only be evaluated approximately. Also, we need to take into account, that the total solution space of Bayesian priors may not contain the solution we try to achieve, because the true model may be something very different, from what we originally thought it was. Here Occams Razor is again the doctrine we use to make decisions about model choice: Our model shall be complicated enough to grasp the underlying dynamic, but needs to be naive enough to not learn noise as a feature. This leads to Gaussian processes, since they have a lot of convenient properties. The priors of Gaussian Processes ($\mathcal{GP}$) are appropriate and have infinite basis functions. These are flexible enough for nonlinear models, but still retain analytic solutions. Through this, they are especially computationally feasible. Also, Student-\textit{t}-processes, as they are scaled Gaussian processes, seem to be a logical choice. Even though they are more restrained in the amount of computation tasks that can be done analytically, compared to the Gaussian Processes. 
+
+%prior VB section
+In applications of the Bayes rule there are posterior terms containing the information about the data, but sometimes they have combinatorially large search spaces. This leads to the intractability of these terms, represented by $\int_X P(Y,X)dX$.
+\begin{equation}%Bayes with intractable term
+	P(X|Y) = \frac{P(Y|X)P(X)}{P(Y)} = \frac{P(Y|X)P(X)}{\int_Z P(Y,X)dX}
+	\label{eq:Bayes_with_intractable_term}
+\end{equation}
+To obtain the approximation using Variational Bayes, we introduce a variational distribution. 
+\begin{equation}%Variational Distribution
+	Q(X) \approx P(X|Y)
+	\label{eq: Variational Distribution}
+\end{equation}
+This distribution $Q(X)$ is restricted to be of a family of simpler distributions than the true distribution, e.g. a posterior, $P(X|Y)$. The distribution family is selected with the intention of finding a $Q(X)$ similarly enough to $P(X|Y)$ so that $Q(X)$ can be used instead of $P(X|Y)$. We use KL-divergence to measure the dissimilarity of the distributions, but with a slight variation. Instead of using a KL-version $D_{KL}(p|q)$ that is applied in the expectation propagation algorithm, we use the reverse KL-divergence. 
+\begin{equation}%Expectation maximisation KL-Divergence
+	D_{KL}(Q|P) \triangleq \sum_{X} Q(X) \log \frac{Q(X)}{P(X|Y)}
+	\label{eq: Expectation maximisation KL-Divergence}
+\end{equation}
+given, that
+\begin{equation}%ELBO Intro
+	P(X|Y) = \frac{P(Y,X)}{P(Y)},
+	\label{eq: ELBO Intro}
+\end{equation}
+the KL Divergence here can be rewritten as
+\begin{subequations}%new KL for ELBO
+	\label{eq:new_KL_ELBO}
+	\begin{align}
+		D_{KL}(Q|P) = \sum_{X}Q(X) \Big[\log \frac{Q(X)}{P(X,Y)}+\log P(Y)\Big]  \\
+		= \sum_{X}Q(X) [\log Q(X) - \log P(X,Y)] + \sum_{X}Q(X)[\log P(Y)]. 
+	\end{align}
+\end{subequations}
+After seeing that $P(Y)$ is constant with respect to $X$ and $\sum_{X}Q(X)=1$ because $Q(X)$ is a distribution, and rewritten with the definition of the expected value for a discrete random variable, we arrive at
+\begin{equation}%evidence log
+	\log P(Y) = D_{KL}(Q|P) - \mathbb{E}_X[\log Q(Y) - \log P(X,Y)] = D_{KL}(Q|P) + \mathcal{L}(Q)
+	\label{eq:evidence_log}
+\end{equation} 
+Since $P(Y)$ is fixed under $Q$, maximizing $\mathcal{L}(Q)$ minimizes the KL Divergence from Q to P. $\mathcal{L}(Q)$ is also known as the Evidence Lower Bound, which will be important to the evaluation of models later on. The variational distribution is usually assumed to factorize over some partition of the latent Variables $X$. 
+\begin{equation}%Variational Distribution Factorisation
+	Q(X) = \prod_{i=1}^{M} q_i(X_i)
+	\label{eq: Variational Distribution Factorisation}
+\end{equation}
+Using Variational Calculus we find that the best distribution in a Bayesian workflow with Variational Bayes is
+\begin{equation}%VB best Distribution
+	q_j^* (X_j|Y) = \frac{\exp(\mathbb{E}_{i\neq j}[\ln p(X,Y)])}{\int \exp(\mathbb{E}_{i\neq j}[\ln p(X,Y)]) dZ_j},
+	\label{eq: VB best Distribution}
+\end{equation}
+where $\mathbb{E}_{i\neq j}[\ln p(X,Y)]$ is the expectation value of the logarithm of the joint probability of data and latent variables not in the partition. Due to circular depencies between the parameters, the evaluation of these in a program offers to be solved iteratively. With this, due to the type of the distribution $Q(X)$, an analytical approximation for the posterior probability can be achieved, allowing the iterative calculation of parameters of the model. Variational Bayes can be used out of the box. Stan provides an implementation known as Automatic Differentiation Variational Inference (ADVI, Kucukelbir) that approximates the posterior with a Gaussian as the variational approximation. For more details, see section \ref{sec:stochastic_gradient_ascent}.

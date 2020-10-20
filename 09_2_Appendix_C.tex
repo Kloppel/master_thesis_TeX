@@ -1,0 +1,883 @@
+\subsection{gplvm\_finance.stan}
+\lstset{basicstyle=\tiny, style=Stan}
+\begin{lstlisting}
+functions {
+	matrix cov_linear(vector[] X1, vector[] X2, real sigma){
+		int N = size(X1);
+		int M = size(X2);
+		int Q = num_elements(X1[1]);
+		matrix[N,M] K;
+		{
+			matrix[N,Q] x1;
+			matrix[M,Q] x2;
+			for (n in 1:N)
+				x1[n,] = X1[n]';
+			for (m in 1:M)
+				x2[m,] = X2[m]';
+			K = x1*x2';
+		}
+		return square(sigma)*K;
+	}
+	
+	matrix cov_matern32(vector[] X1, vector[] X2, real sigma, real l, real jitter){
+		int N = size(X1);
+		int M = size(X2);
+		matrix[N,M] K;
+		real dist;
+		for (n in 1:N)
+			for (m in 1:M){
+				dist = sqrt(squared_distance(X1[n], X2[m]) + jitter);
+				K[n,m] = square(sigma)*(1+sqrt(3)*dist/l)*exp(-sqrt(3)*dist/l);}
+		return K;
+	}
+	
+	matrix cov_matern52(vector[] X1, vector[] X2, real sigma, real l, real jitter){
+		int N = size(X1);
+		int M = size(X2);
+		matrix[N,M] K;
+		real dist;
+		for (n in 1:N)
+			for (m in 1:N){
+				dist = sqrt(squared_distance(X1[n], X2[m]) + jitter);
+				K[n,m] = square(sigma)*(1+sqrt(5)*dist/l+5*square(dist)/(3*square(l)))*exp(-sqrt(5)*dist/l);}
+		return K;
+	}
+	
+	matrix cov_exp_l2(vector[] X1, vector[] X2, real sigma, real l, real jitter){
+		int N = size(X1);
+		int M = size(X2);
+		matrix[N,M] K;
+		real dist;
+		for (n in 1:N)
+			for (m in 1:M){
+				dist = sqrt(squared_distance(X1[n], X2[m]) + jitter);
+				K[n,m] = square(sigma) * exp(-0.5/l * dist);}
+		return K;
+	}
+	
+	matrix cov_exp(vector[] X1, vector[] X2, real sigma, real l, real jitter){
+		int N = size(X1);
+		int M = size(X2);
+		matrix[N,M] K;
+		real dist;
+		int Q = rows(X1[1]);
+		for (n in 1:N)
+		for (m in 1:M){
+			dist = 0;  //sqrt(squared_distance(X1[n], X2[m]) + jitter);
+			for (i in 1:Q)
+				dist = dist + fabs(X1[n,i] - X2[m,i]);
+				K[n,m] = square(sigma) * exp(-0.5/l * dist);}
+		return K;
+	}
+	
+	matrix kernel_f(vector[] X1, vector[] X2, real sigma, real l, 
+	real a, int kernel, vector diag_stds, real jitter){
+		int N = size(X1);
+		int M = size(X2);
+		matrix[N,M] K;
+		if (kernel==1)
+		K = cov_linear(X1, X2, a);               // K = a^2*X1*X2.T
+		else if (kernel==2){
+			K = cov_exp_quad(X1, X2, sigma, l);
+			for (n in 1:N)
+				K[n,n] = K[n,n] + jitter;
+			K = quad_form_diag(K, diag_stds);}
+		else if (kernel==3){
+			K = cov_exp(X1, X2, sigma, l, jitter);
+			K = quad_form_diag(K, diag_stds);}
+		else if (kernel==4){
+			K = cov_matern32(X1, X2, sigma, l, jitter);
+			K = quad_form_diag(K, diag_stds);}
+		else if (kernel==5){
+			K = cov_matern52(X1, X2, sigma, l, jitter);
+			K = quad_form_diag(K, diag_stds);}
+		return K;
+	}
+}
+data {
+	int<lower=1> N;
+	int<lower=1> D;
+	int<lower=1> Q;
+	matrix[N,D] Y;
+	int<lower=1,upper=5> kernel;
+	real<lower=0> jitter;
+}
+transformed data {
+	vector[N] mu = rep_vector(0, N);
+}
+parameters {
+	//vector[N] mu;
+	vector[Q] X[N];                       // latent space
+	real<lower=0> kernel_lengthscale;     // kernel lengthscale
+	vector<lower=0>[N] diag_stds;         // std for each stock
+	vector<lower=0>[N] noise_std;         // observation noise ... non isotropic a la factor model
+	real<lower=0> alpha;                  // kernel std for linear kernel
+}
+transformed parameters {
+	matrix[N,N] L;
+	real R2 = 0;
+	{
+		matrix[N,N] K = kernel_f(X, X, 1., kernel_lengthscale, 
+		alpha, kernel, diag_stds, jitter);
+		
+		for (n in 1:N)
+		K[n,n] = K[n,n] + pow(noise_std[n], 2) + jitter;
+		L = cholesky_decompose(K);
+		
+		R2 = sum(1 - square(noise_std) ./diagonal(K) )/N;
+	}
+}
+model {
+	for (n in 1:N)
+	X[n] ~ normal(0, 1);
+	
+	diag_stds ~ normal(0, .5);
+	noise_std ~ normal(0, .5);
+	kernel_lengthscale ~ inv_gamma(3.0,1.0);// inv_gamma for zero-avoiding prop
+	alpha ~ inv_gamma(3.0,1.0);             // kernel std for linear kernel
+	
+	for (d in 1:D) 
+	col(Y,d) ~ multi_normal_cholesky(mu, L);
+}
+generated quantities {
+	matrix[N,N] K = kernel_f(X, X, 1., kernel_lengthscale, 
+	alpha, kernel, diag_stds, jitter);
+}
+\end{lstlisting}
+\cleardoubleoddpage
+
+\subsection{gplvm\_vola.stan}
+\lstset{basicstyle=\tiny, style=Stan}
+\begin{lstlisting}
+functions {
+	matrix cov_linear(vector[] X1, vector[] X2, real sigma){
+		int N = size(X1);
+		int M = size(X2);
+		int Q = num_elements(X1[1]);
+		matrix[N,M] K;
+		{
+			matrix[N,Q] x1;
+			matrix[M,Q] x2;
+			for (n in 1:N)
+			x1[n,] = X1[n]';
+			for (m in 1:M)
+			x2[m,] = X2[m]';
+			K = x1*x2';
+		}
+		return square(sigma)*K;
+	}
+	
+	matrix cov_matern32(vector[] X1, vector[] X2, real sigma, real l, real jitter){
+		int N = size(X1);
+		int M = size(X2);
+		matrix[N,M] K;
+		real dist;
+		for (n in 1:N)
+		for (m in 1:M){
+			dist = sqrt(squared_distance(X1[n], X2[m]) + jitter);
+			K[n,m] = square(sigma)*(1+sqrt(3)*dist/l)*exp(-sqrt(3)*dist/l);}
+		return K;
+	}
+	
+	matrix cov_matern52(vector[] X1, vector[] X2, real sigma, real l, real jitter){
+		int N = size(X1);
+		int M = size(X2);
+		matrix[N,M] K;
+		real dist;
+		for (n in 1:N)
+		for (m in 1:N){
+			dist = sqrt(squared_distance(X1[n], X2[m]) + jitter);
+			K[n,m] = square(sigma)*(1+sqrt(5)*dist/l+5*square(dist)/(3*square(l)))*exp(-sqrt(5)*dist/l);}
+		return K;
+	}
+	
+	matrix cov_exp_l2(vector[] X1, vector[] X2, real sigma, real l, real jitter){
+		int N = size(X1);
+		int M = size(X2);
+		matrix[N,M] K;
+		real dist;
+		for (n in 1:N)
+		for (m in 1:M){
+			dist = sqrt(squared_distance(X1[n], X2[m]) + jitter);
+			K[n,m] = square(sigma) * exp(-0.5/l * dist);}
+		return K;
+	}
+	
+	matrix cov_exp(vector[] X1, vector[] X2, real sigma, real l, real jitter){
+		int N = size(X1);
+		int M = size(X2);
+		matrix[N,M] K;
+		real dist;
+		int Q = rows(X1[1]);
+		for (n in 1:N)
+		for (m in 1:M){
+			dist = 0;  //sqrt(squared_distance(X1[n], X2[m]) + jitter);
+			for (i in 1:Q)
+			dist = dist + fabs(X1[n,i] - X2[m,i]);
+			K[n,m] = square(sigma) * exp(-0.5/l * dist);}
+		return K;
+	}
+	
+	matrix kernel_f(vector[] X1, vector[] X2, real sigma, real l, 
+	real a, int kernel, vector diag_stds, real jitter){
+		int N = size(X1);
+		int M = size(X2);
+		matrix[N,M] K;
+		if (kernel==1)
+		K = cov_linear(X1, X2, a);               // K = a^2*X1*X2.T
+		else if (kernel==2){
+			K = cov_exp_quad(X1, X2, sigma, l);
+			for (n in 1:N)
+			K[n,n] = K[n,n] + jitter;
+			K = quad_form_diag(K, diag_stds);}
+		else if (kernel==3){
+			K = cov_exp(X1, X2, sigma, l, jitter);
+			K = quad_form_diag(K, diag_stds);}
+		else if (kernel==4){
+			K = cov_matern32(X1, X2, sigma, l, jitter);
+			K = quad_form_diag(K, diag_stds);}
+		else if (kernel==5){
+			K = cov_matern52(X1, X2, sigma, l, jitter);
+			K = quad_form_diag(K, diag_stds);}
+		return K;
+	}
+}
+data {
+	int<lower=1> N;                       // number of stocks
+	int<lower=1> D;                       // number of days
+	int<lower=1> Q;                       // number of latent dimensions
+	matrix[N,D] Y;                        // input Data
+	int<lower=1,upper=5> kernel;
+	real<lower=0> jitter;
+}
+transformed data {
+	vector[N] mu = rep_vector(0, N);
+}
+parameters {
+	vector[Q] X[N];
+	vector<lower=0>[N] noise_std;
+	real<lower=0> kernel_l;
+	matrix<lower=0>[N,D] Sigma;
+}
+transformed parameters{
+	matrix[N,N] K;
+	matrix[N,N] L_;
+	matrix[N,N] L[D];
+	
+	K = kernel_f(X, X, kernel_l,  kernel, rep_vector(0,N), jitter);
+	L_ = cholesky_decompose(K);
+	
+	{
+	for (d in 1:D){
+			L[d] = diag_post_multiply(L_, Sigma[:,d]);
+		}
+	}
+}
+model {
+	for (n in 1:N){              //latent space process
+		X[n] ~ normal(0.0, 1.0);
+		Sigma[n] ~ normal(0.0, 1.0);
+	}{
+		noise_std ~ normal(0.0, 1.0);
+		kernel_l ~ normal(0.0, 1.0);
+	} 
+	for (d in 1:D)
+		col(Y,d) ~ multi_normal_cholesky(mu, L[d]);
+}
+\end{lstlisting}
+\cleardoubleoddpage
+
+\subsection{gplvm\_time.stan}
+\lstset{basicstyle=\tiny, style=Stan}
+\begin{lstlisting}
+functions{
+	matrix cov_lin(vector[] X1, vector[] X2, real sigma){
+		int N = size(X1);
+		int M = size(X2);
+		matrix[N,M] K;
+		{
+			for (n in 1:N){
+				for (m in 1:M){
+					K[n,m] = square(sigma) * X1[n,n] * X2[m,m];
+				}
+			}
+		}
+		return K;
+	}
+	
+	matrix cov_linear(vector[] X1, vector[] X2, real sigma){
+		int N = size(X1);
+		int M = size(X2);
+		int Q = rows(X1[1]);
+		matrix[N,M] K;
+		{matrix[N,Q] x1;
+		matrix[M,Q] x2;
+		for (n in 1:N)
+			x1[n,:] = X1[n]';                //'=Transpose
+		for (m in 1:M)
+			x2[m,:] = X2[m]';
+		K = x1*x2';}
+		return square(sigma)*K;
+	}
+	
+	matrix cov_exp(vector[] X1, vector[] X2, real sigma, real l, real jitter){
+		int N = size(X1);
+		int M = size(X2);
+		matrix[N,M] K;
+		real dist;
+		int Q = rows(X1[1]);
+		for (n in 1:N)
+			for (m in 1:M){
+				dist = 0;
+				for (q in 1:Q)
+					dist = dist + fabs(X1[n,q] - X2[m,q]);
+		K[n,m] = square(sigma) * exp(-0.5/l * dist);}
+		return K;
+	}
+	
+	matrix cov_exp_2(vector[] X1, vector[] X2, real sigma, real l, real jitter){
+		int N = size(X1);
+		int M = size(X2);
+		matrix[N,M] K;
+		real dist;
+		int Q = rows(X1[1]);
+		for (n in 1:N)
+			for (m in 1:M){
+				dist = 0;
+				for (q in 1:Q)
+					dist = dist + square(fabs(X1[n,q] - X2[m,q]));
+		K[n,m] = square(sigma) * exp(-0.5/l * dist);}
+		return K;
+	}
+	
+	matrix cov_matern32(vector[] X1, vector[] X2, real sigma, real l, real jitter){
+		int N = size(X1);
+		int M = size(X2);
+		matrix[N,M] K;
+		real dist;
+		int Q = rows(X1[1]);
+		for (n in 1:N)
+			for (m in 1:M){
+				dist = 0;
+				for (q in 1:Q)
+					dist = dist + fabs(X1[n,q] - X2[m,q]);
+		K[n,m] = square(sigma)*(1+sqrt(3)*dist/l)*exp(-sqrt(3)*dist/l);}
+		return K;
+	}
+	matrix cov_matern52(vector[] X1, vector[] X2, real sigma, real l, real jitter){
+		int N = size(X1);
+		int M = size(X2);
+		matrix[N,M] K;
+		real dist;
+		int Q = rows(X1[1]);
+		for (n in 1:N)
+			for (m in 1:N){
+				dist = 0;
+				for (q in 1:Q)
+					dist = dist + fabs(X1[n,q] - X2[m,q]);
+		K[n,m] = square(sigma)*(1+sqrt(5)*dist/l+5*square(dist)/(3*square(l)))*exp(-sqrt(5)*dist/l);}
+		return K;
+	}
+	
+	matrix kernel_f_time(vector[] X1, vector[] X2, real l, real sigma, real jitter, int kernel_n){
+		int D = size(X1);
+		matrix[D,D] L;
+		matrix[D,D] K;
+		if (kernel_n==1){
+			K = cov_lin(X1, X2, l);
+			for (d in 1:D)
+				K[d,d] = K[d,d] + pow(sigma, 2) + jitter;
+			L = cholesky_decompose(K);}
+		else if (kernel_n==2){
+			K = cov_exp_2(X1, X2, 1., l, jitter);
+			for (d in 1:D)
+				K[d,d] = K[d,d] + pow(sigma, 2) + jitter;
+			L = cholesky_decompose(K);}
+		else if (kernel_n==3){
+			K = cov_exp(X1, X2, 1., l, jitter);
+			for (d in 1:D)
+				K[d,d] = K[d,d] + pow(sigma, 2) + jitter;
+			L = cholesky_decompose(K);}
+		else if (kernel_n==4){
+			K = cov_matern32(X1, X2, 1., l, jitter);
+			for (d in 1:D)
+				K[d,d] = K[d,d] + pow(sigma, 2) + jitter;
+			L = cholesky_decompose(K);} 
+		else if (kernel_n==5){
+			K = cov_matern52(X1, X2, 1., l, jitter);
+			for (d in 1:D)
+				K[d,d] = K[d,d] + pow(sigma, 2) + jitter;
+			L = cholesky_decompose(K);}
+		return L;
+	}
+	matrix kernel_f_y(vector[] X1, vector[] X2, real l, vector sigma, vector noise, real jitter, int kernel_n){
+		int N = size(X1);
+		matrix[N,N] K;
+		matrix[N,N] L;
+		if (kernel_n==1){
+			K = cov_linear(X1, X2, l);
+			K = quad_form_diag(K, sigma);
+			for (n in 1:N){
+				K[n,n] = K[n,n] + pow(noise[n], 2) + jitter;}
+			L = cholesky_decompose(K);}
+		else if (kernel_n==2){
+			K = cov_exp_2(X1, X2, 1., l, jitter);
+			K = quad_form_diag(K, sigma);
+			for (n in 1:N){
+				K[n,n] = K[n,n] + pow(noise[n], 2) + jitter;}
+			L = cholesky_decompose(K);}
+		else if (kernel_n==3){
+			K = cov_exp(X1, X2, 1., l, jitter);
+			K = quad_form_diag(K, sigma);
+			for (n in 1:N){
+				K[n,n] = K[n,n] + pow(noise[n], 2) + jitter;}
+			L = cholesky_decompose(K);}
+		else if (kernel_n==4){
+			K = cov_matern32(X1, X2, 1., l, jitter);
+			K = quad_form_diag(K, sigma);
+			for (n in 1:N){
+				K[n,n] = K[n,n] + pow(noise[n], 2) + jitter;}
+			L = cholesky_decompose(K);} 
+		else if (kernel_n==5){
+			K = cov_matern52(X1, X2, 1., l, jitter);
+			K = quad_form_diag(K, sigma);
+			for (n in 1:N){
+				K[n,n] = K[n,n] + pow(noise[n], 2) + jitter;}
+			L = cholesky_decompose(K);}
+		return L;}	
+}
+data {
+	// data and model parameters
+	int<lower=1> N;
+	int<lower=1> D;
+	int<lower=1> Q;
+	matrix[N,D] Y;
+	int<lower=1,upper=5> kernel_number_x;
+	int<lower=1,upper=5> kernel_number_y;
+	real<lower=0> jitter;
+	// lengthscale dist parameters
+	real<lower=0> alpha_x;
+	real<lower=0> beta_x;
+	real<lower=0> alpha_y;
+	real<lower=0> beta_y;
+	// standard deviation parameters
+	real <lower=0,upper=1> std_x;
+	real <lower=0,upper=0.1> noise_x;
+	real <lower=0,upper=1> std_y;
+	real <lower=0,upper=0.1> noise_y;
+}
+transformed data {
+	vector[N] zeros_N = rep_vector(0, N);
+	vector[D] zeros_D = rep_vector(0, D);
+	vector[D] time[D];
+	for (d in 1:D){
+		time[d] = rep_vector(d,d);
+	}
+}
+parameters {
+	// X
+	vector[Q] X[D,N];
+	real<lower=0> kernel_lengthscale_x;
+	real<lower=0> kernel_std_x;
+	real<lower=0> noise_std_x;
+	// Y
+	real<lower=0> kernel_lengthscale_y;
+	vector<lower=0>[N] diag_std_y;
+	vector<lower=0>[N] noise_std_y;
+}
+transformed parameters {
+	real R2 = mean(square(diag_std_y)./(square(diag_std_y)+square(noise_std_y)));
+}
+model {
+	// X
+	kernel_lengthscale_x ~ gamma(alpha_x, beta_x);
+	kernel_std_x ~ normal(0, std_x);
+	noise_std_x ~ normal(0, noise_x);
+	// Y
+	kernel_lengthscale_y ~ inv_gamma(alpha_y, beta_y);
+	diag_std_y ~ normal(0, std_y);
+	noise_std_y ~ normal(0, noise_y);
+	{
+		matrix[D,D] L_x;
+		L_x = kernel_f_time(time, time, kernel_lengthscale_x, noise_std_x, jitter, kernel_number_x);
+		for (q in 1:Q)
+		for (n in 1:N)
+		to_vector(X[:,n,q]) ~ multi_normal_cholesky(zeros_D, L_x);
+	}
+	{
+		matrix[N,N] L_y[D];
+		matrix[N,N] K_y;
+		//vector[Q] X[D,N];
+		for (d in 1:D) {
+			L_y[d] = kernel_f_y(X[d], X[d], kernel_lengthscale_y, diag_std_y, rep_vector(0,N), jitter, kernel_number_y);}
+		for (d in 1:D) 
+		col(Y,d) ~ multi_normal_cholesky(zeros_N, L_y[d]);
+	}
+}
+generated quantities {
+	matrix[N,N] K_y[D];
+	
+	for (d in 1:D){
+		K_y[d] = kernel_f_y(X[d], X[d], kernel_lengthscale_y, diag_std_y, rep_vector(0,N), jitter, kernel_number_y);}
+}
+\end{lstlisting}
+\cleardoubleoddpage
+
+\subsection{student-t.stan}
+\lstset{basicstyle=\tiny, style=Stan}
+\begin{lstlisting}
+functions {
+	matrix cov_linear(vector[] X1, vector[] X2, real sigma){
+		int N = size(X1);
+		int M = size(X2);
+		int Q = num_elements(X1[1]);
+		matrix[N,M] K;
+		{
+			matrix[N,Q] x1;
+			matrix[M,Q] x2;
+			for (n in 1:N)
+			x1[n,] = X1[n]';
+			for (m in 1:M)
+			x2[m,] = X2[m]';
+			K = x1*x2';
+		}
+		return square(sigma)*K;
+	}
+	
+	matrix cov_matern32(vector[] X1, vector[] X2, real sigma, real l, real jitter){
+		int N = size(X1);
+		int M = size(X2);
+		matrix[N,M] K;
+		real dist;
+		for (n in 1:N)
+		for (m in 1:M){
+			dist = sqrt(squared_distance(X1[n], X2[m]) + jitter);
+			K[n,m] = square(sigma)*(1+sqrt(3)*dist/l)*exp(-sqrt(3)*dist/l);}
+		return K;
+	}
+	
+	matrix cov_matern52(vector[] X1, vector[] X2, real sigma, real l, real jitter){
+		int N = size(X1);
+		int M = size(X2);
+		matrix[N,M] K;
+		real dist;
+		for (n in 1:N)
+		for (m in 1:N){
+			dist = sqrt(squared_distance(X1[n], X2[m]) + jitter);
+			K[n,m] = square(sigma)*(1+sqrt(5)*dist/l+5*square(dist)/(3*square(l)))*exp(-sqrt(5)*dist/l);}
+		return K;
+	}
+	
+	matrix cov_exp_l2(vector[] X1, vector[] X2, real sigma, real l, real jitter){
+		int N = size(X1);
+		int M = size(X2);
+		matrix[N,M] K;
+		real dist;
+		for (n in 1:N)
+		for (m in 1:M){
+			dist = sqrt(squared_distance(X1[n], X2[m]) + jitter);
+			K[n,m] = square(sigma) * exp(-0.5/l * dist);}
+		return K;
+	}
+	
+	matrix cov_exp(vector[] X1, vector[] X2, real sigma, real l, real jitter){
+		int N = size(X1);
+		int M = size(X2);
+		matrix[N,M] K;
+		real dist;
+		int Q = rows(X1[1]);
+		for (n in 1:N)
+		for (m in 1:M){
+			dist = 0;  //sqrt(squared_distance(X1[n], X2[m]) + jitter);
+			for (i in 1:Q)
+			dist = dist + fabs(X1[n,i] - X2[m,i]);
+			K[n,m] = square(sigma) * exp(-0.5/l * dist);}
+		return K;
+	}
+	
+	matrix kernel_f(vector[] X1, vector[] X2, real sigma, real l, 
+	real a, int kernel, vector diag_stds, real jitter){
+		int N = size(X1);
+		int M = size(X2);
+		matrix[N,M] K;
+		if (kernel==1)
+		K = cov_linear(X1, X2, a);               // K = a^2*X1*X2.T
+		else if (kernel==2){
+			K = cov_exp_quad(X1, X2, sigma, l);
+			for (n in 1:N)
+			K[n,n] = K[n,n] + jitter;
+			K = quad_form_diag(K, diag_stds);}
+		else if (kernel==3){
+			K = cov_exp(X1, X2, sigma, l, jitter);
+			K = quad_form_diag(K, diag_stds);}
+		else if (kernel==4){
+			K = cov_matern32(X1, X2, sigma, l, jitter);
+			K = quad_form_diag(K, diag_stds);}
+		else if (kernel==5){
+			K = cov_matern52(X1, X2, sigma, l, jitter);
+			K = quad_form_diag(K, diag_stds);}
+		return K;
+	}
+}
+data {
+	int<lower=1> N;                       // number of stocks
+	int<lower=1> D;                       // number of days
+	int<lower=1> Q;                       // number of latent dimensions
+	matrix[N,D] Y;                        // input Data
+	int<lower=1,upper=5> kernel;    // used by function 'kernel_f()' for model choice
+	real<lower=0> jitter;
+}
+transformed data {
+	vector[N] mu = rep_vector(0, N);      
+}
+parameters {
+	vector[Q] X[N];                       
+	real<lower=0> kernel_lengthscale;     
+	vector<lower=0>[N] diag_stds;         
+	vector<lower=0>[N] noise_std;         
+	real<lower=0> alpha;                  
+	real<lower=2> t_nu;                   
+}
+transformed parameters {
+	real R2 = 0;
+	matrix[N,N] K = kernel_f(X, X, 1., kernel_lengthscale, alpha, kernel, diag_stds, jitter);
+	for (n in 1:N)
+		K[n,n] = K[n,n] + pow(noise_std[n], 2) + jitter; 
+	R2 = sum(1 - square(noise_std) ./diagonal(K) )/N;
+}
+model {
+	diag_stds ~ normal(0, .5);
+	noise_std ~ normal(0, .5);                 
+	kernel_lengthscale ~ inv_gamma(3.0,1.0);
+	alpha ~ inv_gamma(3.0,1.0);                  
+	for (n in 1:N)                               
+		X[n] ~ normal(0, 1);
+	for (d in 1:D)                               
+		col(Y,d) ~ multi_student_t(t_nu, mu, K); 
+}
+\end{lstlisting}
+\cleardoubleoddpage
+
+\subsection{gplvm\_time-studt.stan}
+\lstset{basicstyle=\tiny, style=Stan}
+\begin{lstlisting}
+functions{
+	matrix cov_lin(vector[] X1, vector[] X2, real sigma){
+		int N = size(X1);
+		int M = size(X2);
+		matrix[N,M] K;
+		{
+			for (n in 1:N){
+				for (m in 1:M){
+					K[n,m] = square(sigma) * X1[n,n] * X2[m,m];
+				}
+			}
+		}
+		return K;
+	}
+	
+	matrix cov_linear(vector[] X1, vector[] X2, real sigma){
+		int N = size(X1);
+		int M = size(X2);
+		int Q = rows(X1[1]);
+		matrix[N,M] K;
+		{
+			matrix[N,Q] x1;
+			matrix[M,Q] x2;
+			for (n in 1:N)
+			x1[n,:] = X1[n]';                //'=Transpose
+			for (m in 1:M)
+			x2[m,:] = X2[m]';
+			K = x1*x2';
+		}
+		return square(sigma)*K;
+	}
+	
+	matrix cov_exp(vector[] X1, vector[] X2, real sigma, real l, real jitter){
+		int N = size(X1);
+		int M = size(X2);
+		matrix[N,M] K;
+		real dist;
+		int Q = rows(X1[1]);
+		for (n in 1:N)
+		for (m in 1:M){
+			dist = 0;  //sqrt(squared_distance(X1[n], X2[m]) + jitter);
+			for (q in 1:Q)
+			dist = dist + fabs(X1[n,q] - X2[m,q]);
+			K[n,m] = square(sigma) * exp(-0.5/l * dist);}
+		return K;
+	}
+	
+	matrix cov_exp_2(vector[] X1, vector[] X2, real sigma, real l, real jitter){
+		int N = size(X1);
+		int M = size(X2);
+		matrix[N,M] K;
+		real dist;
+		int Q = rows(X1[1]);
+		for (n in 1:N)
+		for (m in 1:M){
+			dist = 0;  //sqrt(squared_distance(X1[n], X2[m]) + jitter);
+			for (q in 1:Q)
+			dist = dist + square(fabs(X1[n,q] - X2[m,q]));
+			K[n,m] = square(sigma) * exp(-0.5/l * dist);}
+		return K;
+	}
+	
+	matrix cov_matern32(vector[] X1, vector[] X2, real sigma, real l, real jitter){
+		int N = size(X1);
+		int M = size(X2);
+		matrix[N,M] K;
+		real dist;
+		int Q = rows(X1[1]);
+		for (n in 1:N)
+		for (m in 1:M){
+			dist = 0;  //sqrt(squared_distance(X1[n], X2[m]) + jitter);
+			for (q in 1:Q)
+			dist = dist + fabs(X1[n,q] - X2[m,q]);
+			K[n,m] = square(sigma)*(1+sqrt(3)*dist/l)*exp(-sqrt(3)*dist/l);}
+		return K;
+	}
+	matrix cov_matern52(vector[] X1, vector[] X2, real sigma, real l, real jitter){
+		int N = size(X1);
+		int M = size(X2);
+		matrix[N,M] K;
+		real dist;
+		int Q = rows(X1[1]);
+		for (n in 1:N)
+		for (m in 1:N){
+			dist = 0;  //sqrt(squared_distance(X1[n], X2[m]) + jitter);
+			for (q in 1:Q)
+			dist = dist + fabs(X1[n,q] - X2[m,q]);
+			K[n,m] = square(sigma)*(1+sqrt(5)*dist/l+5*square(dist)/(3*square(l)))*exp(-sqrt(5)*dist/l);}
+		return K;
+	}
+	
+	matrix kernel_f_time(vector[] X1, vector[] X2, real l, real sigma, real jitter, int kernel_n){
+		int D = size(X1);
+		matrix[D,D] K;
+		if (kernel_n==1){
+			K = cov_lin(X1, X2, l);
+			for (d in 1:D)
+			K[d,d] = K[d,d] + pow(sigma, 2) + jitter;}
+		else if (kernel_n==2){
+			K = cov_exp_2(X1, X2, 1., l, jitter);
+			for (d in 1:D)
+			K[d,d] = K[d,d] + pow(sigma, 2) + jitter;}
+		else if (kernel_n==3){
+			K = cov_exp(X1, X2, 1., l, jitter);
+			for (d in 1:D)
+			K[d,d] = K[d,d] + pow(sigma, 2) + jitter;}
+		else if (kernel_n==4){
+			K = cov_matern32(X1, X2, 1., l, jitter);
+			for (d in 1:D)
+			K[d,d] = K[d,d] + pow(sigma, 2) + jitter;}
+		else if (kernel_n==5){
+			K = cov_matern52(X1, X2, 1., l, jitter);
+			for (d in 1:D)
+			K[d,d] = K[d,d] + pow(sigma, 2) + jitter;}
+		return K;
+	}
+	
+	matrix kernel_f_y(vector[] X1, vector[] X2, real l, vector sigma, vector noise, real jitter, int kernel_n){
+		int N = size(X1);
+		matrix[N,N] K;
+		if (kernel_n==1){
+			K = cov_linear(X1, X2, l);
+			K = quad_form_diag(K, sigma);
+			for (n in 1:N){
+				K[n,n] = K[n,n] + pow(noise[n], 2) + jitter;}}
+		else if (kernel_n==2){
+			K = cov_exp_2(X1, X2, 1., l, jitter);
+			K = quad_form_diag(K, sigma);
+			for (n in 1:N){
+				K[n,n] = K[n,n] + pow(noise[n], 2) + jitter;}}
+		else if (kernel_n==3){
+			K = cov_exp(X1, X2, 1., l, jitter);
+			K = quad_form_diag(K, sigma);
+			for (n in 1:N){
+				K[n,n] = K[n,n] + pow(noise[n], 2) + jitter;}}
+		else if (kernel_n==4){
+			K = cov_matern32(X1, X2, 1., l, jitter);
+			K = quad_form_diag(K, sigma);
+			for (n in 1:N){
+				K[n,n] = K[n,n] + pow(noise[n], 2) + jitter;}}
+		else if (kernel_n==5){
+			K = cov_matern52(X1, X2, 1., l, jitter);
+			K = quad_form_diag(K, sigma);
+			for (n in 1:N){
+				K[n,n] = K[n,n] + pow(noise[n], 2) + jitter;}}
+		return K;
+	} 
+}
+data {
+	// data and model parameters
+	int<lower=1> N;
+	int<lower=1> D;
+	int<lower=1> Q;
+	matrix[N,D] Y;
+	int<lower=1,upper=5> kernel_number_x;
+	int<lower=1,upper=5> kernel_number_y;
+	real<lower=0> jitter;
+	// lengthscale dist parameters
+	real<lower=0> alpha_x;
+	real<lower=0> beta_x;
+	real<lower=0> alpha_y;
+	real<lower=0> beta_y;
+	// standard deviation parameters
+	real <lower=0,upper=1> std_x;
+	real <lower=0,upper=0.1> noise_x;
+	real <lower=0,upper=1> std_y;
+	real <lower=0,upper=0.1> noise_y;
+}
+transformed data {
+	vector[N] zeros_N = rep_vector(0, N);
+	vector[D] zeros_D = rep_vector(0, D);
+	vector[D] time[D];
+	for (d in 1:D){
+		time[d] = rep_vector(d,d);}
+}
+parameters{
+	// X
+	vector[Q] X[D,N];
+	real<lower=0> kernel_lengthscale_x;
+	real<lower=0> kernel_std_x;
+	real<lower=0> noise_std_x;
+	real<lower=2> t_nu_x;
+	// Y
+	real<lower=0> kernel_lengthscale_y;
+	vector<lower=0>[N] diag_std_y;
+	vector<lower=0>[N] noise_std_y;
+	real<lower=2> t_nu_y;
+}
+transformed parameters {
+	real R2 = mean(square(diag_std_y)./(square(diag_std_y)+square(noise_std_y)));
+}
+model {
+	// X
+	kernel_lengthscale_x ~ gamma(alpha_x, beta_x);
+	kernel_std_x ~ normal(0, std_x);
+	noise_std_x ~ normal(0, noise_x);
+	// Y
+	kernel_lengthscale_y ~ inv_gamma(alpha_y, beta_y);
+	diag_std_y ~ normal(0, std_y);
+	noise_std_y ~ normal(0, noise_y);
+	//prior on X
+	{
+		matrix[D,D] K_x;
+		K_x = kernel_f_time(time, time, kernel_lengthscale_x, noise_std_x, jitter, kernel_number_x);
+		for (q in 1:Q)
+			for (n in 1:N)
+				to_vector(X[:,n,q]) ~ multi_student_t(t_nu_x, zeros_D, K_x);
+	}
+	//likelihood
+	{
+		matrix[N,N] K_y[D];
+		for (d in 1:D) {
+			K_y[d] = kernel_f_y(X[d], X[d], kernel_lengthscale_y, diag_std_y, rep_vector(0,N), jitter, kernel_number_y);
+		}
+		for (d in 1:D) 
+			col(Y,d) ~ multi_student_t(t_nu_y, zeros_N, K_y[d]);
+	}
+}
+\end{lstlisting}
+\cleardoubleoddpage

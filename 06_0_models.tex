@@ -1,0 +1,114 @@
+This work compares different models on metrics of how good a prediction is on the dataset. Different datasets have been used in this evaluation, to compare the results of different models, as well as different subsets of the S\&P500 stocks. The GPLVM, described in section \ref{sec:GPLVM} is the basis for all the models. All explicit kernel functions will be provided with the example of a squared exponential kernel.
+
+\subsection{Gaussian Process Latent Variable Model in Finance}
+\ref{sec:gplvm_finance}
+The GPLVM, as explained earlier in section \ref{sec:GPLVM}, considers the same variance for each stock and also the same noise variance. Stocks, however, have different volatilities, which in turn are displayed in the model as variances. Therefore, we reparametrize the model. Given the data matrix $Y = (\bm{y}_1, ..., \bm{y}_N)^{\top} \in \mathbb{R}^{N \times D}$ and the latent spaces $X = (\bm{x}_1, ..., \bm{x}_N)^{\top} \in \mathbb{R}^{N \times Q}$, the model becomes 
+\begin{equation}%eq:financial_model_gplvm
+	Y_n \thicksim \mathcal{N}(0,K),
+	\label{eq:financial_model_gplvm}
+\end{equation}
+where the mean is assumed to be $0$, and the covariance matrix to be given by $K$. The covariance matrix is constructed using the $X$s, the time dependent correlation matrix $K_{\text{corr}}(t)$, noise variances $\sigma_i$ and the variance matrix $\Sigma = \text{diag}(\sigma_i)$. 
+\begin{equation}%eq:constructed_cov_matrix
+	K = \Sigma K_{corr}(d) \Sigma + \sigma_k \mathbb{1}
+	\label{eq:constructed_cov_matrix}
+\end{equation}
+An entry of the resulting covariance matrix $K$ looks like
+\begin{equation}%eq:GPLVM_Kx_entry
+	k(d_i,d_j) = \alpha^2 exp\Big[-\frac{1}{2l^2}(d_i-d_j)\Big]+ \delta_{ij}(\sigma^2 + g),
+	\label{eq:GPLVM_Kx_entry}
+\end{equation}
+where $k(d_i,d_j)$ is the covariance function, $\alpha$ and $l$ are the kernel hyperparameters, $\sigma$ is the variance and $g$ is a very small value (jitter) added to the diagonal of the matrix, to prohibit singular covariance matrices and thus ensure invertibility. This describes a nonlinear mapping from latent space positions to data space, 
+\begin{equation}%eq:nonlinear_map
+	Y_{:,d} = f_d(X_{:,d}) + \epsilon_{:,d}.
+	\label{eq:nonlinear_map}
+\end{equation}
+Here, the function $f_d$, that is the map, is a $\mathcal{GP}(0,k)$, with a nonlinear kernel function $k$. The noise term is $\epsilon_{:,d} \thicksim \mathcal{N}(0,\text{diag}(\bm{\sigma_{n}}^2))$, which directly leads us towards accepting different volatilities for different stocks. We can then decompose the covariance Matrix $K$ into a correlation matrix and diagonal noise matrices. 
+\begin{equation}%eq:covariance_decomposition
+	K = \Sigma K_{\text{corr}} \Sigma,
+	\label{eq:covariance_decomposition}
+\end{equation}
+which, for a stationary kernel becomes
+\begin{equation}%eq:stationary_decomposition
+	K_{\text{stationary}} = \Sigma k_{\text{stationary}}(X,X) \Sigma + k_{\text{noise}}(X,X)
+	\label{eq:stationary_decomposition}
+\end{equation}
+and the likelihood of the full model is given by
+\begin{equation}%eq:gplvm_likelihood
+	p(Y|B,\bm{\theta}) = \prod_{d=1}^{D} \mathcal{N}(Y_{:,d}|\bm{0}, K) = \frac{1}{(2\pi)^{0.5 \cdot ND} K^{0.5 \cdot D}} \exp(-0.5\text{tr}(K^{-1}YY^{\top}))
+	\label{eq:gplvm_likelihood}
+\end{equation}
+The generative process for this model then becomes
+\begin{subequations}%eq:generative_process_gplvm_finance
+	\label{eq:generative_process_gplvm_finance}
+	\begin{align}
+		l \thicksim \text{Inv-Gamma}(3,1),         \nonumber \\
+		\alpha \thicksim \text{Inv-Gamma}(3,1),         \nonumber \\
+		\sigma_n \thicksim \mathcal{N}(0,0.5),         \nonumber \\
+		\sigma_k \thicksim \mathcal{N}(0,0.5),         \nonumber \\
+		X[n] \thicksim \mathcal{N}(0,1),         \nonumber \\
+		Y[d] \thicksim \mathcal{N}(0,K).          \\
+	\end{align}
+\end{subequations}
+
+
+\subsection{Time Dynamic Gaussian Process Latent Variable Model}
+\label{sec:td_gplvm}
+The Time Dynamic Gaussian Process Latent Variable Model (TD-GPLVM) allows the latent space positions to vary over time. Instead of describing $Y \in \mathbb{R}^{N \times D}$ and $X \in \mathbb{R}^{N \times Q}$, which is fixed in latent space, we increase the dimension of $X$ to $X \in \mathbb{R}^{N \times Q \times D}$, where $X_d \in \mathbb{R}^{N \times Q}$ and $X_{n,q,:} \in \mathbb{R}^{D}$. $X_{n,q,:}$ then follows a Gaussian Process.  
+\begin{equation}%TD-GPLVM Latent Space
+	 X_{n,q,:}  \sim \mathcal{N}(0, K_{DD})
+\label{eq: TD-GPLVM Latent Space}
+\end{equation}
+The computational complexity of this process is of order $\mathcal{O}(D^3)$, because of the inversion of $K_{DD} \in \mathbb{R}^{D \times D}$. Therefore, only a few days of observations can be modelled simultaneously.  
+The idea of this model is to incorporate a time dependent correlation of latent variables, which may exist for certain datasets. In matrix notation, the covariance matrices are formed through the quadratic diagonal form of the time dependent correlation matrix $K_{corr}(t)$, noise variance $\sigma_n$ and variance matrix $\Sigma = \text{diag}(\sigma_i)$.
+\begin{equation}%TD-GPLVM matrix form
+	K = \Sigma K_{corr}(d) \Sigma + \sigma_n \mathbb{1}
+\label{eq: TD-GPLVM matrix form}
+\end{equation}
+An entry of the resulting covariance matrix $K_x$ looks like
+\begin{equation}%TD-GPLVM K_x entry
+	K_{ij}=k(x_i,x_j) = \alpha_i\alpha_j exp\Big[-\frac{1}{2l^2}(d_i-d_j)\Big]+ \delta_{ij}(\sigma_i^2 + g),
+\label{eq: TD-GPLVM K_x entry}
+\end{equation}
+where $k(x_i,x_j)$ is the covariance function, $\alpha_i\alpha_j$ and $l$ are the kernel hyperparameters, $\sigma_i$ are the variances and $g$ is a very small value (jitter) added to the diagonal of the matrix, to prohibit singular covariance matrices and thus ensure invertibility. The inputs to the covariance function are $d_i$ and $d_j$, the $i$th or $j$th entry of a vector containing ordered timesteps $\bm{d} = (d_1, d_2, d_3, ... , d_D)^{\top}$. The covariance function of $K_y$ then becomes
+\begin{equation}%TD-GPLVM K_y entry
+	k_y(x_i[d], x_j[d]) = \alpha_i\alpha_j exp\Big[-\frac{1}{2l_y^2} (x_i[d]-x_j[d])\Big] + \delta_{ij}(\sigma_i^2 + g)
+\label{eq: TD-GPLVM K_y entry}
+\end{equation}
+where again, $k_y(x_i[d], x_j[d])$ is the kernel function, $\alpha_i\alpha_j$ and $l_y^2$ are the kernel hyperparameters, and $\sigma_y$ is the variance. Also, $g$ continues to be a very small value added as jitter to the diagonal of the covariance matrix to prevent singularity and $x_{i}[d]$ and $x_{j}[d]$ are the positions of asset $i$ and $j$ at time point $d$ in latent space $\mathcal{X}$. After conditioning the model was parametrised by
+\begin{subequations}
+	\label{eq:TD-GPLVM conditioning}
+	\begin{align}
+	l \sim \text{gamma}(10,5)         \nonumber \\
+	l_y \sim \text{inv-gamma}(3,1)         \nonumber \\
+	\sigma_k \sim \mathcal{N}(0, 0.5) \nonumber \\
+	\sigma_n \sim \mathcal{N}(0, 0.05) \nonumber \\
+	X[n,q,:] \sim \mathcal{N}(\bm{0}, K_x) \nonumber \\
+	Y[:,d] \sim \mathcal{N}(\bm{0}, K_y[d]) \nonumber
+	\end{align}
+\end{subequations}
+the stan code can be found in Appendix \ref{sec:model_code}, as \textit{gplvm-time.stan}.
+
+\subsection{Volatility Gaussian Process Latent Variable Model}
+\label{sec:v_gplvm}
+Another model that may solve problems of simpler models is the Volatility Gaussian Process Latent Variable Model (V-GPLVM). The V-GPLVM works similar to the regular GPLVM, but the diagonal matrix with the variances, which work as a placeholder for the proportional volatility, is time dependent. 
+\begin{equation}%V-GPLVM matrix form
+	K_d = \text{diag}\Big(\Sigma(:,d)\Big) K_{corr} \text{ diag}\Big(\Sigma(:,d)\Big) + \text{diag}(\sigma_i)
+\label{eq: V-GPLVM matrix form}
+\end{equation}
+Again, $\sigma_n$ are the noise variances, and $K_{corr}$ is the correlation matrix. $\text{diag}(\Sigma(:,d))$ is the time dependent diagonal variance matrix, which will be inferred throughout the process. While evaluating the programm, these matrices are constructed from columns of the total variance matrix $\Sigma \in \mathbb{R}^{N\times D}$, representing the inferred values for variances for stocks on a given time step. The latent space Gaussian Process prior is just a standard normal distribution $\mathcal{N}(0,1)$, while the Gaussian Process over the data space if more complex. 
+\begin{equation}%V-GPLVM K_y Element
+	K[d]_{ij} = \Sigma[d,i] \Sigma[d,j] \Bigg( exp\Big(-\frac{1}{2l^2}(x_i-x_j)\Big)\Bigg)+ \delta_{ij}(\sigma_k^2 + g)
+\label{eq: V-GPLVM K_y Element}
+\end{equation}
+After conditioning the model priors were parametrised like
+\begin{subequations}
+	\label{eq:V-GPLVM conditioning}
+	\begin{align}
+	X[n] \sim \mathcal{N}(0,1)                  \nonumber \\
+	\log\Sigma[d] \sim \mathcal{N}(0,1)         \nonumber \\
+	\sigma_k \sim \mathcal{N}(0,1)              \nonumber \\
+	l \sim \text{inv-gamma}(3,1)                \nonumber \\
+	Y[:,d] \sim \mathcal{N}(\bm{0}, K[d]), \nonumber
+	\end{align}
+\end{subequations}
+where $K$ is evaluated after Cholesky factorising the kernel matrix slices $K[d] \in \mathbb{R}^{N\times Q}$ through Cholesky decomposition $K = LL^*$, where the matrix is decomposed into a lower triangular matrix $L$. Using the Cholesky Decomposition reduces computing time, while maintaining numerical stability. The method is more stable and cost efficient for matrix inversion, which, as previously discussed, is the major bottleneck for computing time, since using the decomposition reduces the needed number of evaluations to half. The stan code can be found in Appendix \ref{sec:model_code} as \textit{gplvm-vola.stan}.

@@ -1,0 +1,32 @@
+\subsubsection{ARCH}
+An econometrics model for time series data describing the variance of the current error through statistics is the autoregressive conditional heteroskedasticity (\textit{ARCH(q)}) model (xxx). The ARCH model is based upon the assumption, that the current error term is a function of the previous time periods error terms. In terms of variance, often the square of the previous time steps error terms are used. In practice, the ARCH model is often used for modeling financial time series exhibiting time-dependent volatility, or so called volatility clustering, e.g. periods of higher volatility, followed by periods of comparably lower volatility, and the other way around. The model is specified through the time series terms.
+\begin{equation}
+	\epsilon_t = \sigma_t z_t
+\label{eq: ARCH process}
+\end{equation}
+Here, $\epsilon_t$ denotes the error terms that make up the ARCH process, $z_t$ is a random variable defined by a strong white noise process, and the series $\sigma_t^2$ is educed as 
+\begin{equation}
+	\sigma_t^2 = \alpha_0 + \sum_{i=1}^{q}\alpha_i \epsilon_{t-i}^2,
+\label{eq: ARCH sigma series}
+\end{equation}
+where all free parameters $\alpha_0, \alpha_i > 0$. The ARCH(q) model was shortly after refined as GARCH(p,q) model, where an important generalization was implemented into the model. 
+
+\subsubsection{GARCH}
+The Generalized autoregressive conditional heteroskedasticity (\textit{GARCH(p,q)}) model is the generalization of the ARCH(q) model, which directly includes lag. It is defined by 
+\begin{subequations}
+	\label{eq:GARCH definition}
+	\begin{align}
+	y_t = X-t'b + \epsilon_t,         \label{eq:GARCH main process} \\
+	\epsilon_t | \psi_{t-1} ~ \mathcal{N}(0,\sigma_t^2),         \label{eq:GARCH noise} \\
+	\sigma_t^2 = \omega + \sum_{i=1}^{q}\alpha_i \epsilon_{t-i}^2 + \sum_{i=1}^{p}\beta_i \sigma_{t-i}^2.         \label{eq:GARCH variance} 
+	\end{align}
+\end{subequations}
+We then find the lag length through estimating the optimal ARCH process and estimating autocorrelations. 
+\begin{subequations}
+	\label{eq:GARCH lag length}
+	\begin{align}
+	y_t = a_0 + \sum_{i=1}^{q}a_i y_{t-i} + \epsilon_t,         \label{eq:GARCH lag ARCH} \\
+	\rho = \frac{\sum_{t=i+1}^{T}(\hat{\epsilon}_t^2 -\hat{\sigma}_t^2)(\hat{\epsilon}_{t-1}^2 -\hat{\sigma}_{t-1}^2)}{\sum_{t=1}^{T}(\hat{\epsilon}_t^2 -\hat{\sigma}_t^2)},         \label{eq:GARCH estimate autocorrelations}
+	\end{align}
+\end{subequations}
+For large samples, GARCH errors are implicated if the standard deviation $\rho(i)=1/\sqrt{T}$. Based on this, the Ljung-Box test can be applied to base a decision if to reject or accept it´s null hypothesis, that there are no ARCH or GARCH errors. In later chapters of this work, the GARCH process is sampled using a Hamilton Chain Monte Carlo algorithm (xxx pyflux), and then used to create datasets that are normed on the expected volatility. 

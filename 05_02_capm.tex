@@ -1,0 +1,68 @@
+Within the Capital Asset Pricing Model (CAPM), a linear model including latent spaces, we can define the market portfolio $r_M$ as
+\begin{equation}%market portfolio capm
+	r_M = \begin{bmatrix} r_f \\ r \end{bmatrix}^{\top} \begin{bmatrix} 1-\bm{e}^{\top} \Sigma^{-1}(\bm{m}-r_f\bm{e}) \\ \Sigma^{-1}(\bm{m}-r_f\bm{e}) \end{bmatrix},
+\label{eq: market portfolio capm}
+\end{equation}
+which leads to the expected return on any asset in CAPM
+\begin{equation}%expected return any asset capm
+	\mu_i = r_f \beta_i(\mu_M -r_f) \text{,}
+\label{eq: expected return any asset capm}
+\end{equation}
+where $\beta_i$ is the covariance relation of market portolio $r_M$ and individual asset $i$. $\beta$ is understood to be the risk, 
+\begin{equation}%beta capm
+	\beta_i = \frac{\sigma_{iM}}{\sigma_M^2}.
+\label{eq: beta capm}
+\end{equation}
+Then, the expected return of the portfolio $\mu_r$ satisfies 
+\begin{equation}%expected return portfolio
+	\mu_r = r_f + \frac{\mu_M - r_f}{\sigma_M}\sigma_r,
+\label{eq: expected return of portfolio capm}
+\end{equation}
+where for a given portfolio $r$ the mean portfolio return $\mu_r = \mathbb{E}(r)$ and $\sigma_r^2 = \text{var}(r)$. The line of efficiency is then given by 
+\begin{subequations}%efficiency line capm
+	\label{eq:efficiency line capm}
+	\begin{align}
+	\mu_M = \mathbb{E}(r_M) = r_f + (\bm{m}-r_f\bm{e})^{\top}\Sigma^{-1}(\bm{m}-r_f\bm{e}),         \label{eq:Expected value market} \\
+	\sigma_M^2 = \text{var}(r_M) = (\bm{m}-r_f\bm{e})^{\top}\Sigma^{-1}(\bm{m}-r_f\bm{e}).         \label{eq:variance market}
+	\end{align}
+\end{subequations}
+Recalling the relation \ref{eq:Return_Rate_Definition}, where the return rate was defined, we can find the CAPM pricing formula, substituting the sell-price $x_1$ with $P$, and the buy-price $x_0$ with $Q$. 
+\begin{equation}%capm pricing formula
+	P = \frac{\mu_Q}{1+r_f+\beta_r(\mu_M-r_f)}
+\label{eq: capm pricing formula}
+\end{equation}
+The main connection between the expected value of the return of an asset and its risk is described by
+\begin{equation}%expected return with risk capm
+	\mathbb{E}[\bm{r}_n] = \bm{r}_{rf} + \beta_n\mathbb{E}[\bm{r}_{m} - \bm{r}_{rf}] = \bm{r}_f + \beta_n\mathbb{E}[\bm{r}_{me}]. 
+\label{eq:expected_return_with_risk_capm}
+\end{equation}
+with the risk-free ($\beta=0$) return rate $\bm{r}_{rf}$, which is the expected return rate for a zero-risk portfolio. For any portfolio with risk $\beta_n \neq 0$, the excess return of the market $\bm{r}_{me} = \bm{r}_m - \bm{r}_f$ applies, and the investor is compensated with a higher expected return. Note, that all $\bm{r}_{f/m/me} \in \mathbb{R}^D$ for $D$ different days. So equation \ref{eq:expected_return_with_risk_capm} can be rewritten in terms of the excess return $\bm{r}_e = \bm{r} - \bm{r}_f$ with excess return of an asset n: $\bm{r}_{e,n}$,
+\begin{equation}%excess return
+	\mathbb{E}[\bm{r}_{e,n}] = \beta_n\mathbb{E}[\bm{r}_{me}].
+\label{eq: excess return}
+\end{equation}
+
+
+\subsection{Arbitrage Pricing Theory}
+\label{sec:apt}
+If the model is then expanded to include multiple additional risk factors $\bm{F}$, other than systematic risk factors of the market and specific risk factors of the assets, we arrive at Arbitrage Pricing Theory (APT) \cite{Ross_2013}.
+APT assumes, that every asset return follows a factor structure with an additional noise term $\epsilon_n$, that is modeled as a Gaussian with zero mean and variance $\sigma_n^2$ \cite{Ross_n_Roll_1995}. The factor structure allows the Arbitrage pricing theory to incorporate other factors, which different studies have shown to be at least partly influential on the predictive power of CAPM. One of the aforementioned models is the Fama-French three factor model, consisting of the expected returns, the difference between returns in portfolios of small and big stocks, and the returns of portfolios containing high and low stocks \cite{Fama_1993} \cite{Fama_1996}.
+\begin{equation}%three factor model
+	\mathbb{E}[\bm{r}_{M}] - \bm{r}_{f} = \bm{\beta}_{M}[{E}[\bm{r}_{M}] - \bm{r}_{f}] + \bm{\beta}_{SMB}[\mathbb{E}[R_{SMB}]] + \bm{\beta}_{HML}[\mathbb{E}[R_{HML}]].
+\label{eq: Three factor model}
+\end{equation}
+The expected returns are shown to behave like 
+\begin{subequations}%Arbitrage Pricing Model, asset return structure and expected return excess.
+	\label{eq:Arbitrage Pricing Model}
+	\begin{align}
+	\bm{r}_n = \alpha_n + \bm{F}\bm{\beta}_n + \epsilon_n         \label{eq:asset return factor structure} \\
+	\mathbb{E}[\bm{r}_{e,n}] = \mathbb{E}[\bm{F}]\bm{\beta}_n         \label{eq:expected excess returns}
+	\end{align}
+\end{subequations} 
+This equation for the asset return factor structure $\bm{r}_{n}$ can then be rewritten, so that it matches the form of a Gaussian Process Latent Variable Model, which will be explained in detail in section \ref{sec:GPLVM}. 
+\begin{equation}%GPLVM form of Arbitrage Pricing Theory
+	\bm{r}_{n,:} = f(\bm{B}_{n,:}) + \epsilon_n
+\label{eq: GPLVM form of Arbitrage Pricing Theory}
+\end{equation}
+where $:$ stands for all entries in the specified dimension, and $\bm{B}$ is the factor matrix constructed from the $\bm{\beta}_n$. The three factor model also has shortcomings \cite{Fama_French_2004}, which especially arise from the momentum effect, where due to inverstors beliefs in well performing stocks over a timespan of e.g. 3-12 months, these stocks continue to do well afterwards. The same effect also applies to stocks that do not do well over such a timespan, they will probably not do well for the next few months after. \newline
+In APT, the factors are unobserved quantities, that can be inferred using e.g. PCA. The drawback of PCA, assuming an error with fixed variance for each element of the return matrix $r$, highlights that alternatives are needed. Another approach was factor analysis \cite{Everitt_1984}, which allowed different noise variances for each asset contained in $r$. Since there is no analytic result to the optimization of the marginal distribution in this case, these can be solved iteratively using the expectation maximization algorithm \cite{Bishop_2006}. 

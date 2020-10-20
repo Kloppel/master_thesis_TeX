@@ -1,0 +1,41 @@
+Latent variables are variables of an experiment or theory, that influence the outcome of an experiment without being directly measurable. The only way to obtain a latent variable is to infer it from the information that can be observed in the experiment. Intelligence, for example, is a latent variable. It is not directly measurable, but is influencing the outcome of some experiments in psychology. While tests for intelligence try to measure intelligence by inferring it, they can only give a general direction of the true value, assuming it exists and can be ascertained to a single value in a controlled environment. The test then tries to measure what we believe to be components of intelligence, e.g. skills in logic, pattern recognition and grammar. The measured scores are then used to calculate an overall score, which we believe to be a measure for intelligence. While latent variable models, such as the one used in psychology to infer intelligence from a test, enable scientists to more accurately describe phenomena we already have a general understanding about, the models also enable us to infer data in other fields. Since latent variable models are already directly connected to statistics, it is not a far stretch to apply some of them in fields that previously used almost exclusively statistical methods to describe phenomena. Also, latent variable models could reveal relations between different variables of the system, if different variables are dependent on the same set of latent variables, and therefore change with a behaviour that can be infered by knowing the state of the latent variables. \newline
+Assume that a data matrix $Y \in \mathbb{R}^{N\times D}$ is given and the goal is to find a lower dimensional representation $X \in \mathbb{R}^{N\times Q}$ of the matrix, without loosing a major share of the information encoded in the data matrix. Previous models have mostly used Principal Component Analysis (PCA) to achieve this dimensionality reduction. Principal Component Analysis has also been shown to be the maximum likelihood solution to a particular form of Gaussian Latent Variable Model \cite{Tipping_Bishop_1999_1}\cite{Tipping_Bishop_1999_2}. PCA here embeds $\mathcal{Y}$, the data space, via linear mapping into a latent space $\mathcal{X}$. Later on, the Gaussian Process Latent Variable Model was introduced as a non-linear extension to probabilistic PCA \cite{Lawrence_2005}. \newline \newline
+Probabilistic PCA (P-PCA) is a model derived by using the probabilistic framework. While P-PCA facilitates statistical testing and Bayesian workflows, it can also be applied to problem sets, where PCA previously could not be used efficiently. This is especially the case for missing data in the dataset. Also, P-PCA can be represented as a general Gaussian density model, which can efficiently be solved through computing maximum likelihood estimates for the parameters associated with the covariance matrix from principal components. This promises effective classification and novelty detection. Starting with factor analysis, a linear relation between the observation vector $\bm{t} \in \mathbb{R}^d$ and the vector of latent variables $\bm{x} \in \mathbb{R}^q \text{, } d>q$ can be established like 
+\begin{equation}%Factor analysis
+	\bm{t} = W\bm{x} + \bm{\mu} + \bm{\epsilon}
+\label{eq:Factor_Analysis}
+\end{equation}
+with noise $\bm{\epsilon} \sim \mathcal{N}(\bm{0, \Sigma})$ and mean vector $\bm{\mu}$ to permit the model with a non-zero mean. It promises a parsimonious explanation of dependencies between observations. If $\bm{x}$ is assumed to be standard Gaussian, we can find the distribution for $t$ 
+\begin{equation}%factor analysis results
+	\bm{t} \sim \mathcal{N}(\bm{\mu}, WW^{\top} + \Sigma).
+\label{eq: Factor analysis results}
+\end{equation}
+Now, when constraining the covariance matrix $\Sigma$ to be a diagonal matrix, we will have only autocorrelation in observed variables (conditional independence), given the latent variables $\bm{x}$ and the mapping $W$. The latent variables are therefore used to explain correlations between observation variables. \newline
+With this, we can find P-PCA by considering the $\bm{x}$-conditional probability distribution over $\bm{t}$-space
+\begin{equation}%x-conditional probability dist over t-space
+	\bm{t}|\bm{x} \sim \mathcal{N}(W\bm{x} + \bm{\mu}, \sigma^2I)
+\label{eq: x-conditional probability dist over t-space}
+\end{equation}
+Integrating out the latent variables, we arrive at the Gaussian marginal distribution for $\bm{t}$
+\begin{equation}%marginal distribution t
+	\bm{t} \sim \mathcal{N}(\bm{\mu}, WW^{\top} + \sigma^2I)
+\label{eq: marginal distribution t}
+\end{equation}
+with corresponding log-likelihood
+\begin{equation}%log likelihood p-pca
+	\log p(\bm{t}) = -\frac{N}{2} \Big(d \ln(2\pi) + \ln|WW^{\top} + \sigma^2I| + \text{tr}((WW^{\top} + \sigma^2I)^{-1}\frac{1}{N}\sum_{n=1}^{N}(\bm{t}_n - \bm{\mu})(\bm{t}_n - \bm{\mu})^{\top}) \Big).
+\label{eq: log likelihood p-pca}
+\end{equation}
+Iterative maximisation of the log-likelihood now presents a fast and reliable way to optimise the P-PCA. From this model, standard PCA can be recovered when $\sigma^2 \to 0$ and $ WW^{\top} + \sigma^2I \to (W_{ML}^{\top}W_{ML})$. 
+\newline \newline
+Considering the GPLVM, we can find the generating procedure to be
+\begin{equation}%generating procedure GPLVM
+	Y_{n,:} = \bm{f}(X_{n,:}) + \bm{\epsilon}_n,
+\label{eq: generating procedure GPLVM}
+\end{equation} 
+closely resembling the linear model of a GP, equation \ref{eq:Factor_Analysis} again. Here, $\bm{f} = f(f_1,...,f_D)$ is a group of $D$ independent samples from a Gaussian process $f_d \sim \mathcal{GP}(0, k(\cdot,\cdot))$. $X$ is the matrix containing the latent space ($\mathcal{X}$) positions.  Due to the structure of the problem at hand, the rows of the data matrix $Y$ are assumed to be jointly Gaussian distributed, while the columns are independent. This can be interpreted as every data point (return rate) of a single day being Gaussian distributed, while there is no time-dynamic. Each sample of $Y_{:,d} \sim \mathcal{N}(Y_{:,d}|\bm{0}, K)$ is assumed to incorporate noise inside the covariance matrix $K = k(X,X) + \sigma^2 I$, where $\sigma^2$ is the variance of the noise $\bm{\epsilon}$, which is assumed to be random. We find the marginal likelihood of $Y$ to be
+\begin{equation}%marginal likelihood of data gplvm
+	p(Y|X) = \prod_{d=1}^{D} \mathcal{N}(Y_{:,d}|\bm{0},K) = \frac{1}{(2\pi)^{ND/2}|K|^{D/2}} \exp \Bigg(-\frac{1}{2}tr(K^{-1}YY^{\top})\Bigg).
+\label{eq: marginal likelihood of data gplvm}
+\end{equation}
+The covariance matrix $K$ gives the dependency on the kernel hyperparameters as well as the latent space positions $X$. Lawrence (2005) suggested to optimize the log-marginal-likelihood $\log p(Y|X)$, with the hyperparameters and latent space positions as the parameters used for optimisation. 
